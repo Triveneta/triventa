@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { TrendingUp, Building, PieChart, ArrowRight } from "lucide-react";
@@ -15,7 +16,7 @@ const Investimenti = () => {
       <main className="pt-24 pb-16">
         <div className="container mx-auto px-6">
           <div className="mb-16">
-            <p className="text-primary text-sm font-medium tracking-[0.2em] mb-4">INVESTIMENTI</p>
+            <p className="font-display text-primary text-sm font-medium tracking-[0.2em] mb-4">INVESTIMENTI</p>
             <h1 className="font-serif text-4xl md:text-5xl font-medium text-foreground mb-6">Investi nel Mattone</h1>
             <p className="text-muted-foreground max-w-2xl">Scopri le migliori opportunità di investimento immobiliare nel Triveneto.</p>
           </div>
@@ -44,9 +45,9 @@ const Investimenti = () => {
                 </div>
                 <h3 className="font-serif text-xl font-medium text-foreground mb-3">{item.title}</h3>
                 <p className="text-muted-foreground mb-4">{item.desc}</p>
-                <a href="#" className="inline-flex items-center gap-2 text-primary text-sm font-medium hover:gap-3 transition-all">
+                <Link to="/investimenti" className="inline-flex items-center gap-2 text-primary text-sm font-medium hover:gap-3 transition-all">
                   Scopri di più <ArrowRight className="w-4 h-4" />
-                </a>
+                </Link>
               </div>
             ))}
           </div>

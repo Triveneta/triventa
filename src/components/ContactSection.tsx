@@ -15,13 +15,14 @@ const ContactSection = () => {
   };
 
   return (
-    <section className="py-24 bg-background" id="contatti">
+    <section className="relative py-28 lg:py-36 bg-card/50" id="contatti">
+      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent" />
       <div className="container mx-auto px-6">
-        <div className="grid lg:grid-cols-2 gap-16">
+        <div className="grid lg:grid-cols-2 gap-16 lg:gap-20">
           {/* Contact Info */}
           <div>
-            <p className="text-primary text-sm font-medium tracking-[0.2em] mb-4">CONTATTI</p>
-            <h2 className="font-serif text-3xl md:text-4xl font-medium text-foreground mb-8">
+            <p className="font-display text-primary text-xs font-medium tracking-[0.35em] mb-4">CONTATTI</p>
+            <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-medium text-foreground mb-8 tracking-tight">
               Parliamo del Tuo Progetto
             </h2>
             <p className="text-muted-foreground mb-10 leading-relaxed">
@@ -60,7 +61,7 @@ const ContactSection = () => {
           </div>
 
           {/* Contact Form */}
-          <div className="bg-card p-8 lg:p-10 border border-border">
+          <div className="bg-background/80 p-8 lg:p-10 border border-white/10 rounded-sm">
             <form onSubmit={handleSubmit} className="space-y-6">
               <div>
                 <label className="block text-sm font-medium text-foreground mb-2">
@@ -111,7 +112,7 @@ const ContactSection = () => {
               </div>
               <button
                 type="submit"
-                className="w-full py-4 bg-primary text-primary-foreground text-sm font-semibold tracking-[0.15em] hover:bg-primary/90 transition-colors flex items-center justify-center gap-2"
+                className="font-display w-full py-4 bg-primary text-primary-foreground text-sm font-semibold tracking-[0.2em] hover:bg-primary/90 transition-colors flex items-center justify-center gap-2"
               >
                 INVIA MESSAGGIO
                 <ArrowRight className="w-4 h-4" />

@@ -12,7 +12,7 @@ const Acquisto = () => {
       <main className="pt-24 pb-16">
         <div className="container mx-auto px-6">
           <div className="mb-12">
-            <p className="text-primary text-sm font-medium tracking-[0.2em] mb-4">ACQUISTA</p>
+            <p className="font-display text-primary text-sm font-medium tracking-[0.2em] mb-4">ACQUISTA</p>
             <h1 className="font-serif text-4xl md:text-5xl font-medium text-foreground mb-6">Cerca la Tua Casa Ideale</h1>
             <p className="text-muted-foreground max-w-2xl">Trova la proprietà perfetta nel Triveneto con il nostro team di esperti.</p>
           </div>
@@ -30,7 +30,7 @@ const Acquisto = () => {
                   className="w-full pl-12 pr-4 py-3 bg-background border border-border text-foreground placeholder:text-muted-foreground focus:border-primary focus:outline-none"
                 />
               </div>
-              <button className="px-8 py-3 bg-primary text-primary-foreground font-medium tracking-wider hover:bg-primary/90 transition-colors">
+              <button className="font-display px-8 py-3 bg-primary text-primary-foreground font-medium tracking-wider hover:bg-primary/90 transition-colors">
                 CERCA
               </button>
             </div>

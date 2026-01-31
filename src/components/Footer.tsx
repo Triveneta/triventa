@@ -1,14 +1,14 @@
+import { Link } from "react-router-dom";
 import { Facebook, Instagram, Linkedin, Youtube } from "lucide-react";
-import logo from "@/assets/logo-triveneta.png";
 
 const Footer = () => {
   return (
-    <footer className="bg-card border-t border-border">
+    <footer className="relative bg-card border-t border-white/10">
       <div className="container mx-auto px-6 py-16">
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Brand */}
           <div className="lg:col-span-2">
-            <img src={logo} alt="Triveneta Immobiliare" className="h-12 mb-6" />
+            <img src="/logo.png" alt="Triveneta Immobiliare - Premium Real Estate" className="h-12 mb-6" />
             <p className="text-muted-foreground mb-6 max-w-sm leading-relaxed">
               La tua agenzia immobiliare di fiducia nel Triveneto. Esperienza, professionalità e passione al servizio dei tuoi progetti.
             </p>
@@ -27,29 +27,25 @@ const Footer = () => {
 
           {/* Links */}
           <div>
-            <h4 className="font-serif text-lg font-medium text-foreground mb-6">Servizi</h4>
+            <h4 className="font-serif text-lg font-medium text-foreground mb-6 tracking-tight">Servizi</h4>
             <ul className="space-y-3">
-              {["Compra Casa", "Vendi Casa", "Investimenti", "Valutazione", "Case Vacanza"].map((item) => (
-                <li key={item}>
-                  <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
-                    {item}
-                  </a>
-                </li>
-              ))}
+              <li><Link to="/acquisto" className="text-muted-foreground hover:text-primary transition-colors">Compra Casa</Link></li>
+              <li><Link to="/vendita" className="text-muted-foreground hover:text-primary transition-colors">Vendi Casa</Link></li>
+              <li><Link to="/investimenti" className="text-muted-foreground hover:text-primary transition-colors">Investimenti</Link></li>
+              <li><Link to="/vendita" className="text-muted-foreground hover:text-primary transition-colors">Valutazione</Link></li>
+              <li><Link to="/" className="text-muted-foreground hover:text-primary transition-colors">Case Vacanza</Link></li>
             </ul>
           </div>
 
           {/* Areas */}
           <div>
-            <h4 className="font-serif text-lg font-medium text-foreground mb-6">Zone</h4>
+            <h4 className="font-serif text-lg font-medium text-foreground mb-6 tracking-tight">Zone</h4>
             <ul className="space-y-3">
-              {["Lago di Garda", "Verona", "Trentino", "Friuli V.G.", "Veneto"].map((item) => (
-                <li key={item}>
-                  <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
-                    {item}
-                  </a>
-                </li>
-              ))}
+              <li><Link to="/vendita" className="text-muted-foreground hover:text-primary transition-colors">Lago di Garda</Link></li>
+              <li><Link to="/vendita" className="text-muted-foreground hover:text-primary transition-colors">Verona</Link></li>
+              <li><Link to="/vendita" className="text-muted-foreground hover:text-primary transition-colors">Trentino</Link></li>
+              <li><Link to="/vendita" className="text-muted-foreground hover:text-primary transition-colors">Friuli V.G.</Link></li>
+              <li><Link to="/vendita" className="text-muted-foreground hover:text-primary transition-colors">Veneto</Link></li>
             </ul>
           </div>
         </div>
@@ -59,9 +55,9 @@ const Footer = () => {
             © 2026 Triveneta Immobiliare. Tutti i diritti riservati.
           </p>
           <div className="flex gap-6 text-sm">
-            <a href="#" className="text-muted-foreground hover:text-primary transition-colors">Privacy</a>
-            <a href="#" className="text-muted-foreground hover:text-primary transition-colors">Cookie</a>
-            <a href="#" className="text-muted-foreground hover:text-primary transition-colors">Termini</a>
+            <Link to="/" className="text-muted-foreground hover:text-primary transition-colors">Privacy</Link>
+            <Link to="/" className="text-muted-foreground hover:text-primary transition-colors">Cookie</Link>
+            <Link to="/" className="text-muted-foreground hover:text-primary transition-colors">Termini</Link>
           </div>
         </div>
       </div>
