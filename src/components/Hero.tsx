@@ -59,10 +59,10 @@ const Hero = () => {
           </Link>
         </div>
 
-        {/* CASE VACANZA - slightly left of center */}
+        {/* CASE VACANZA - centered on mobile, slightly left on desktop */}
         <Link
           to="/"
-          className="font-display px-10 py-3 bg-foreground/10 backdrop-blur-sm border border-foreground/30 text-foreground text-sm font-medium tracking-[0.15em] hover:bg-foreground/20 hover:border-foreground/50 transition-all -translate-x-8"
+          className="font-display px-10 py-3 bg-foreground/10 backdrop-blur-sm border border-foreground/30 text-foreground text-sm font-medium tracking-[0.15em] hover:bg-foreground/20 hover:border-foreground/50 transition-all sm:-translate-x-8"
         >
           CASE VACANZA
         </Link>
