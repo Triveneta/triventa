@@ -17,7 +17,7 @@ const showcaseItems = [
     href: "/acquisto",
   },
   {
-    image: "/2200xxs%20(1).webp",
+    image: "/2200xxss.webp",
     label: "INVESTIMENTI",
     title: "Investi in Immobili",
     subtitle: "Opportunità esclusive per investitori",
