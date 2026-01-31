@@ -1,14 +1,15 @@
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
+import { Link } from "react-router-dom";
 import logo from "@/assets/logo-triveneta.png";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const navLinks = [
-    { name: "VENDITA", href: "#vendita" },
-    { name: "ACQUISTO", href: "#acquisto" },
-    { name: "INVESTIMENTI", href: "#investimenti" },
+    { name: "VENDITA", href: "/vendita" },
+    { name: "ACQUISTO", href: "/acquisto" },
+    { name: "INVESTIMENTI", href: "/investimenti" },
   ];
 
   return (
@@ -16,31 +17,31 @@ const Header = () => {
       <div className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <a href="/" className="flex items-center">
+          <Link to="/" className="flex items-center">
             <img 
               src={logo} 
               alt="Triveneta Immobiliare" 
               className="h-12 md:h-14 w-auto"
             />
-          </a>
+          </Link>
 
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center gap-10">
             {navLinks.map((link) => (
-              <a
+              <Link
                 key={link.name}
-                href={link.href}
+                to={link.href}
                 className="text-sm font-medium tracking-[0.15em] text-foreground/90 hover:text-primary transition-colors duration-300"
               >
                 {link.name}
-              </a>
+              </Link>
             ))}
-            <a
-              href="#area-premium"
+            <Link
+              to="/area-premium"
               className="px-6 py-2.5 border border-primary text-primary text-sm font-medium tracking-[0.1em] hover:bg-primary hover:text-primary-foreground transition-all duration-300"
             >
               AREA CLIENTI PREMIUM
-            </a>
+            </Link>
           </nav>
 
           {/* Mobile Menu Button */}
@@ -58,22 +59,22 @@ const Header = () => {
           <nav className="lg:hidden mt-4 pb-4 border-t border-border/30 pt-4">
             <div className="flex flex-col gap-4">
               {navLinks.map((link) => (
-                <a
+                <Link
                   key={link.name}
-                  href={link.href}
+                  to={link.href}
                   className="text-sm font-medium tracking-[0.15em] text-foreground/90 hover:text-primary transition-colors"
                   onClick={() => setIsOpen(false)}
                 >
                   {link.name}
-                </a>
+                </Link>
               ))}
-              <a
-                href="#area-premium"
+              <Link
+                to="/area-premium"
                 className="px-6 py-2.5 border border-primary text-primary text-sm font-medium tracking-[0.1em] text-center hover:bg-primary hover:text-primary-foreground transition-all"
                 onClick={() => setIsOpen(false)}
               >
                 AREA CLIENTI PREMIUM
-              </a>
+              </Link>
             </div>
           </nav>
         )}
