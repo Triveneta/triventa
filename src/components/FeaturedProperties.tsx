@@ -1,4 +1,4 @@
-import { MapPin, Bed, Bath, Square } from "lucide-react";
+import { MapPin, ArrowRight } from "lucide-react";
 
 interface Property {
   id: number;
@@ -6,9 +6,7 @@ interface Property {
   location: string;
   price: string;
   image: string;
-  beds: number;
-  baths: number;
-  sqm: number;
+  specs: string;
   isPremium: boolean;
 }
 
@@ -19,100 +17,79 @@ const properties: Property[] = [
     location: "Lago di Garda",
     price: "TRATTATIVA RISERVATA",
     image: "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=600&q=80",
-    beds: 5,
-    baths: 4,
-    sqm: 450,
+    specs: "5 camere · 4 bagni · 450 m²",
     isPremium: true,
   },
   {
     id: 2,
-    title: "Attico Esclusivo",
+    title: "Attico Panoramico",
     location: "Verona Centro",
     price: "€ 890.000",
     image: "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=600&q=80",
-    beds: 3,
-    baths: 2,
-    sqm: 180,
+    specs: "3 camere · 2 bagni · 180 m²",
     isPremium: false,
   },
   {
     id: 3,
-    title: "Residenza di Lusso",
+    title: "Residenza Storica",
     location: "Colli Trentini",
     price: "€ 1.250.000",
     image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600&q=80",
-    beds: 4,
-    baths: 3,
-    sqm: 320,
+    specs: "4 camere · 3 bagni · 320 m²",
     isPremium: true,
   },
 ];
 
 const PropertyCard = ({ property }: { property: Property }) => (
-  <div className="card-premium group cursor-pointer">
-    <div className="relative overflow-hidden">
+  <a href={`#property-${property.id}`} className="group block">
+    <div className="relative overflow-hidden mb-4">
       <img
         src={property.image}
         alt={property.title}
-        className="w-full h-64 object-cover transition-transform duration-700 group-hover:scale-110"
+        className="w-full h-72 object-cover transition-transform duration-700 group-hover:scale-105"
       />
       {property.isPremium && (
-        <div className="absolute top-4 right-4 px-3 py-1 bg-primary text-primary-foreground text-xs font-semibold tracking-wider">
+        <div className="absolute top-4 left-4 px-3 py-1.5 bg-primary text-primary-foreground text-xs font-semibold tracking-wider">
           PREMIUM
         </div>
       )}
-      <div className="absolute inset-0 bg-gradient-to-t from-navy via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
     </div>
-    <div className="p-6">
-      <div className="flex items-center gap-2 text-muted-foreground mb-2">
-        <MapPin className="w-4 h-4 text-primary" />
-        <span className="text-sm">{property.location}</span>
-      </div>
-      <h3 className="font-serif text-xl font-medium text-foreground mb-3">
-        {property.title}
-      </h3>
-      <div className="flex items-center gap-4 text-muted-foreground text-sm mb-4">
-        <span className="flex items-center gap-1">
-          <Bed className="w-4 h-4" /> {property.beds}
-        </span>
-        <span className="flex items-center gap-1">
-          <Bath className="w-4 h-4" /> {property.baths}
-        </span>
-        <span className="flex items-center gap-1">
-          <Square className="w-4 h-4" /> {property.sqm} m²
-        </span>
-      </div>
-      <p className="text-primary font-semibold tracking-wide">{property.price}</p>
+    <div className="flex items-start gap-2 text-muted-foreground mb-2">
+      <MapPin className="w-4 h-4 text-primary mt-0.5" />
+      <span className="text-sm">{property.location}</span>
     </div>
-  </div>
+    <h3 className="font-serif text-xl font-medium text-foreground mb-2 group-hover:text-primary transition-colors">
+      {property.title}
+    </h3>
+    <p className="text-sm text-muted-foreground mb-3">{property.specs}</p>
+    <p className="text-primary font-semibold tracking-wide">{property.price}</p>
+  </a>
 );
 
 const FeaturedProperties = () => {
   return (
-    <section className="py-24 bg-secondary/30" id="immobili">
+    <section className="py-24 bg-card" id="immobili">
       <div className="container mx-auto px-6">
-        <div className="text-center mb-16">
-          <h2 className="font-serif text-3xl md:text-4xl font-medium text-foreground mb-4">
-            Immobili in Evidenza
-          </h2>
-          <p className="text-muted-foreground max-w-2xl mx-auto">
-            Una selezione delle nostre migliori proprietà nel Triveneto
-          </p>
+        <div className="flex flex-col md:flex-row md:items-end md:justify-between mb-12">
+          <div>
+            <p className="text-primary text-sm font-medium tracking-[0.2em] mb-4">IMMOBILI IN EVIDENZA</p>
+            <h2 className="font-serif text-3xl md:text-4xl font-medium text-foreground">
+              Proprietà Selezionate
+            </h2>
+          </div>
+          <a
+            href="#tutti-immobili"
+            className="mt-6 md:mt-0 inline-flex items-center gap-2 text-primary text-sm font-medium tracking-wide hover:gap-3 transition-all"
+          >
+            Vedi Tutti
+            <ArrowRight className="w-4 h-4" />
+          </a>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
           {properties.map((property) => (
             <PropertyCard key={property.id} property={property} />
           ))}
-        </div>
-
-        <div className="text-center mt-12">
-          <a
-            href="#tutti-immobili"
-            className="btn-outline-premium inline-block px-10 py-4 text-sm font-medium tracking-widest"
-          >
-            VEDI TUTTI GLI IMMOBILI
-          </a>
         </div>
       </div>
     </section>
