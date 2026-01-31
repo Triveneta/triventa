@@ -19,7 +19,7 @@ const AreaPremium = () => {
             <div className="w-20 h-20 mx-auto rounded-full bg-primary/10 flex items-center justify-center mb-6">
               <Crown className="w-10 h-10 text-primary" />
             </div>
-            <p className="text-primary text-sm font-medium tracking-[0.2em] mb-4">AREA VIP CLIENTI</p>
+            <p className="font-display text-primary text-sm font-medium tracking-[0.2em] mb-4">AREA VIP CLIENTI</p>
             <h1 className="font-serif text-4xl md:text-5xl font-medium text-foreground mb-6">Immobili Esclusivi Fuori Portale</h1>
             <p className="text-muted-foreground max-w-2xl mx-auto">
               Benvenuto nell'Area VIP. Qui trovi una selezione di immobili riservati, disponibili solo per i nostri clienti esclusivi.
@@ -38,7 +38,7 @@ const AreaPremium = () => {
                     <span className="text-sm">{property.location}</span>
                   </div>
                   <h3 className="font-serif text-xl font-medium text-foreground mb-3">{property.title}</h3>
-                  <p className="text-primary font-semibold tracking-wider">TRATTATIVA RISERVATA</p>
+                  <p className="font-display text-primary font-semibold tracking-wider">TRATTATIVA RISERVATA</p>
                 </div>
                 <div className="absolute top-4 right-4">
                   <Lock className="w-5 h-5 text-primary" />
@@ -51,7 +51,7 @@ const AreaPremium = () => {
           <div className="text-center bg-card border border-border p-12">
             <h2 className="font-serif text-2xl font-medium text-foreground mb-4">Richiedi Immobile Su Misura</h2>
             <p className="text-muted-foreground mb-8">Non trovi quello che cerchi? Contattaci per una ricerca personalizzata e riservata.</p>
-            <a href="#contatti" className="inline-block px-10 py-4 bg-primary text-primary-foreground font-medium tracking-wider hover:bg-primary/90 transition-colors">
+            <a href="/" className="inline-block px-10 py-4 bg-primary text-primary-foreground font-medium tracking-wider hover:bg-primary/90 transition-colors">
               CONTATTACI
             </a>
           </div>

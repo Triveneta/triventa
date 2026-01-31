@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { Link } from "react-router-dom";
-import logo from "@/assets/logo-triveneta.png";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -19,8 +18,8 @@ const Header = () => {
           {/* Logo */}
           <Link to="/" className="flex items-center">
             <img 
-              src={logo} 
-              alt="Triveneta Immobiliare" 
+              src="/logo.png" 
+              alt="Triveneta Immobiliare - Premium Real Estate" 
               className="h-12 md:h-14 w-auto"
             />
           </Link>
@@ -31,14 +30,14 @@ const Header = () => {
               <Link
                 key={link.name}
                 to={link.href}
-                className="text-sm font-medium tracking-[0.15em] text-foreground/90 hover:text-primary transition-colors duration-300"
+                className="font-display text-sm font-medium tracking-[0.15em] text-foreground/90 hover:text-primary transition-colors duration-300"
               >
                 {link.name}
               </Link>
             ))}
             <Link
               to="/area-premium"
-              className="px-6 py-2.5 border border-primary text-primary text-sm font-medium tracking-[0.1em] hover:bg-primary hover:text-primary-foreground transition-all duration-300"
+              className="font-display px-6 py-2.5 border border-primary text-primary text-sm font-medium tracking-[0.1em] hover:bg-primary hover:text-primary-foreground transition-all duration-300"
             >
               AREA CLIENTI PREMIUM
             </Link>
@@ -62,7 +61,7 @@ const Header = () => {
                 <Link
                   key={link.name}
                   to={link.href}
-                  className="text-sm font-medium tracking-[0.15em] text-foreground/90 hover:text-primary transition-colors"
+                  className="font-display text-sm font-medium tracking-[0.15em] text-foreground/90 hover:text-primary transition-colors"
                   onClick={() => setIsOpen(false)}
                 >
                   {link.name}
@@ -70,7 +69,7 @@ const Header = () => {
               ))}
               <Link
                 to="/area-premium"
-                className="px-6 py-2.5 border border-primary text-primary text-sm font-medium tracking-[0.1em] text-center hover:bg-primary hover:text-primary-foreground transition-all"
+                className="font-display px-6 py-2.5 border border-primary text-primary text-sm font-medium tracking-[0.1em] text-center hover:bg-primary hover:text-primary-foreground transition-all"
                 onClick={() => setIsOpen(false)}
               >
                 AREA CLIENTI PREMIUM

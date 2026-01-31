@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { MapPin, ArrowRight } from "lucide-react";
 
 interface Property {
@@ -41,52 +42,54 @@ const properties: Property[] = [
 ];
 
 const PropertyCard = ({ property }: { property: Property }) => (
-  <a href={`#property-${property.id}`} className="group block">
-    <div className="relative overflow-hidden mb-4">
+  <Link to="/vendita" className="group block">
+    <div className="relative overflow-hidden mb-5 rounded-sm border border-white/5">
       <img
         src={property.image}
         alt={property.title}
         className="w-full h-72 object-cover transition-transform duration-700 group-hover:scale-105"
       />
+      <div className="absolute inset-0 border border-transparent group-hover:border-primary/20 transition-colors duration-500 rounded-sm pointer-events-none" />
       {property.isPremium && (
-        <div className="absolute top-4 left-4 px-3 py-1.5 bg-primary text-primary-foreground text-xs font-semibold tracking-wider">
+        <div className="font-display absolute top-4 left-4 px-3 py-1.5 bg-primary text-primary-foreground text-[10px] font-semibold tracking-[0.2em]">
           PREMIUM
         </div>
       )}
     </div>
     <div className="flex items-start gap-2 text-muted-foreground mb-2">
-      <MapPin className="w-4 h-4 text-primary mt-0.5" />
+      <MapPin className="w-4 h-4 text-primary mt-0.5 shrink-0" />
       <span className="text-sm">{property.location}</span>
     </div>
-    <h3 className="font-serif text-xl font-medium text-foreground mb-2 group-hover:text-primary transition-colors">
+    <h3 className="font-serif text-xl lg:text-2xl font-medium text-foreground mb-2 group-hover:text-primary transition-colors tracking-tight">
       {property.title}
     </h3>
     <p className="text-sm text-muted-foreground mb-3">{property.specs}</p>
-    <p className="text-primary font-semibold tracking-wide">{property.price}</p>
-  </a>
+    <p className="text-primary font-semibold tracking-widest text-sm">{property.price}</p>
+  </Link>
 );
 
 const FeaturedProperties = () => {
   return (
-    <section className="py-24 bg-card" id="immobili">
+    <section className="relative py-28 lg:py-36 bg-background" id="immobili">
+      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent" />
       <div className="container mx-auto px-6">
-        <div className="flex flex-col md:flex-row md:items-end md:justify-between mb-12">
+        <div className="flex flex-col md:flex-row md:items-end md:justify-between mb-16 lg:mb-20">
           <div>
-            <p className="text-primary text-sm font-medium tracking-[0.2em] mb-4">IMMOBILI IN EVIDENZA</p>
-            <h2 className="font-serif text-3xl md:text-4xl font-medium text-foreground">
+            <p className="font-display text-primary text-xs font-medium tracking-[0.35em] mb-4">IMMOBILI IN EVIDENZA</p>
+            <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-medium text-foreground tracking-tight">
               Proprietà Selezionate
             </h2>
           </div>
-          <a
-            href="#tutti-immobili"
-            className="mt-6 md:mt-0 inline-flex items-center gap-2 text-primary text-sm font-medium tracking-wide hover:gap-3 transition-all"
+          <Link
+            to="/vendita"
+            className="mt-6 md:mt-0 inline-flex items-center gap-2 text-primary text-sm font-medium tracking-widest hover:gap-3 transition-all"
           >
             Vedi Tutti
             <ArrowRight className="w-4 h-4" />
-          </a>
+          </Link>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10 lg:gap-12">
           {properties.map((property) => (
             <PropertyCard key={property.id} property={property} />
           ))}
