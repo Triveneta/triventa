@@ -15,17 +15,17 @@ const ContactSection = () => {
   };
 
   return (
-    <section className="relative py-28 lg:py-36 bg-card/50" id="contatti">
+    <section className="relative py-16 sm:py-20 md:py-24 lg:py-28 xl:py-36 bg-card/50" id="contatti">
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent" />
-      <div className="container mx-auto px-6">
-        <div className="grid lg:grid-cols-2 gap-16 lg:gap-20">
+      <div className="container mx-auto px-4 sm:px-6">
+        <div className="grid lg:grid-cols-2 gap-8 sm:gap-12 md:gap-16 lg:gap-20">
           {/* Contact Info */}
           <div>
-            <p className="font-display text-primary text-xs font-medium tracking-[0.35em] mb-4">CONTATTI</p>
-            <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-medium text-foreground mb-8 tracking-tight">
+            <p className="font-display text-primary text-xs font-medium tracking-[0.35em] mb-3 sm:mb-4">CONTATTI</p>
+            <h2 className="font-serif text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-medium text-foreground mb-6 sm:mb-8 tracking-tight">
               Parliamo del Tuo Progetto
             </h2>
-            <p className="text-muted-foreground mb-10 leading-relaxed">
+            <p className="text-muted-foreground mb-8 sm:mb-10 leading-relaxed text-sm sm:text-base">
               Siamo a tua disposizione per ogni esigenza immobiliare. Contattaci per una consulenza personalizzata.
             </p>
 
