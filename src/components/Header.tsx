@@ -6,9 +6,11 @@ const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const navLinks = [
-    { name: "VENDITA", href: "/vendita" },
-    { name: "ACQUISTO", href: "/acquisto" },
+    { name: "CHI SIAMO", href: "/chi-siamo" },
+    { name: "SERVIZI", href: "/servizi" },
     { name: "INVESTIMENTI", href: "/investimenti" },
+    { name: "LAVORA CON NOI", href: "/lavora-con-noi" },
+    { name: "CONTATTI", href: "/contatti" },
   ];
 
   return (
