@@ -37,59 +37,59 @@ const Vendita = () => {
       <Header />
       <main className="pb-16">
         <PageHero imageUrl={HERO_IMAGES.vendita}>
-          <div className="max-w-4xl">
-            <p className="font-display text-amber-200 text-sm font-medium tracking-[0.2em] mb-4">IMMOBILI IN VENDITA</p>
-            <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl font-medium text-white drop-shadow-sm">Trova la Tua Casa</h1>
+          <div className="max-w-4xl px-4">
+            <p className="font-display text-amber-200 text-xs sm:text-sm font-medium tracking-[0.2em] mb-3 sm:mb-4">IMMOBILI IN VENDITA</p>
+            <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-medium text-white drop-shadow-sm">Trova la Tua Casa</h1>
           </div>
         </PageHero>
 
-        <div className="container mx-auto px-6 -mt-8 relative z-10">
+        <div className="container mx-auto px-4 sm:px-6 -mt-6 sm:-mt-8 relative z-10">
           {selectedProperty && (
             <section
               id={`property-${selectedProperty.id}`}
-              className="mb-16 scroll-mt-28 rounded-xl border border-border bg-card shadow-sm overflow-hidden"
+              className="mb-10 sm:mb-12 md:mb-16 scroll-mt-24 sm:scroll-mt-28 rounded-xl border border-border bg-card shadow-sm overflow-hidden"
             >
               <div className="relative">
                 <button
                   type="button"
                   onClick={closeDetail}
-                  className="absolute top-4 right-4 z-10 p-2 rounded-full bg-card/90 text-foreground hover:bg-primary hover:text-primary-foreground transition-colors shadow-sm"
+                  className="absolute top-3 right-3 sm:top-4 sm:right-4 z-10 p-1.5 sm:p-2 rounded-full bg-card/90 text-foreground hover:bg-primary hover:text-primary-foreground transition-colors shadow-sm"
                   aria-label="Chiudi"
                 >
-                  <X className="w-5 h-5" />
+                  <X className="w-4 h-4 sm:w-5 sm:h-5" />
                 </button>
                 <img
                   src={selectedProperty.image}
                   alt={selectedProperty.title}
-                  className="w-full h-64 md:h-96 object-cover"
+                  className="w-full h-48 sm:h-56 md:h-64 lg:h-80 xl:h-96 object-cover"
                 />
-                <div className="p-6 md:p-8">
+                <div className="p-4 sm:p-6 md:p-8">
                   <div className="flex items-center gap-2 text-muted-foreground mb-2">
-                    <MapPin className="w-4 h-4 text-primary shrink-0" />
-                    <span className="text-sm">{selectedProperty.location}</span>
+                    <MapPin className="w-3 h-3 sm:w-4 sm:h-4 text-primary shrink-0" />
+                    <span className="text-xs sm:text-sm">{selectedProperty.location}</span>
                   </div>
-                  <h2 className="font-serif text-2xl md:text-3xl font-medium text-foreground mb-2">{selectedProperty.title}</h2>
-                  <p className="text-primary font-semibold mb-4">{selectedProperty.price}</p>
-                  <p className="text-sm text-muted-foreground mb-4">{selectedProperty.specs}</p>
-                  <p className="text-muted-foreground leading-relaxed">{selectedProperty.description}</p>
+                  <h2 className="font-serif text-xl sm:text-2xl md:text-3xl font-medium text-foreground mb-2">{selectedProperty.title}</h2>
+                  <p className="text-sm sm:text-base text-primary font-semibold mb-3 sm:mb-4">{selectedProperty.price}</p>
+                  <p className="text-xs sm:text-sm text-muted-foreground mb-3 sm:mb-4">{selectedProperty.specs}</p>
+                  <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">{selectedProperty.description}</p>
                 </div>
               </div>
             </section>
           )}
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
             {properties.map((property) => (
               <a key={property.id} href={`#property-${property.id}`} className="group block">
-                <div className="relative overflow-hidden mb-4 rounded-xl border border-border shadow-sm group-hover:shadow-md transition-shadow">
-                  <img src={property.image} alt={property.title} className="w-full h-64 object-cover transition-transform duration-700 group-hover:scale-105" />
+                <div className="relative overflow-hidden mb-3 sm:mb-4 rounded-xl border border-border shadow-sm group-hover:shadow-md transition-shadow">
+                  <img src={property.image} alt={property.title} className="w-full h-48 sm:h-56 md:h-64 object-cover transition-transform duration-700 group-hover:scale-105" />
                 </div>
-                <div className="flex items-center gap-2 text-muted-foreground mb-2">
-                  <MapPin className="w-4 h-4 text-primary" />
-                  <span className="text-sm">{property.location}</span>
+                <div className="flex items-center gap-2 text-muted-foreground mb-1 sm:mb-2">
+                  <MapPin className="w-3 h-3 sm:w-4 sm:h-4 text-primary" />
+                  <span className="text-xs sm:text-sm">{property.location}</span>
                 </div>
-                <h3 className="font-serif text-xl font-medium text-foreground mb-2 group-hover:text-primary transition-colors">{property.title}</h3>
-                <p className="text-sm text-muted-foreground mb-2">{property.specs}</p>
-                <p className="text-primary font-semibold">{property.price}</p>
+                <h3 className="font-serif text-lg sm:text-xl font-medium text-foreground mb-1 sm:mb-2 group-hover:text-primary transition-colors">{property.title}</h3>
+                <p className="text-xs sm:text-sm text-muted-foreground mb-1 sm:mb-2">{property.specs}</p>
+                <p className="text-xs sm:text-sm text-primary font-semibold">{property.price}</p>
               </a>
             ))}
           </div>
