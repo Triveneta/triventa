@@ -52,45 +52,45 @@ const ChiSiamo = () => {
         {/* Hero Section */}
         <PageHero imageUrl={HERO_IMAGES.chiSiamo}>
           <div className="max-w-4xl">
-            <p className="font-display text-amber-200 text-sm font-medium tracking-[0.3em] mb-6">CHI SIAMO</p>
-            <h1 className="font-serif text-4xl md:text-6xl lg:text-7xl font-medium text-white leading-[1.1] mb-8 drop-shadow-sm">
+            <p className="font-display text-amber-200 text-xs sm:text-sm font-medium tracking-[0.3em] mb-4 sm:mb-6">CHI SIAMO</p>
+            <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-medium text-white leading-[1.1] mb-6 sm:mb-8 drop-shadow-sm px-4">
               Un'agenzia immobiliare di nuova generazione
             </h1>
-            <p className="text-xl md:text-2xl text-white/90 leading-relaxed max-w-3xl drop-shadow-sm">
+            <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-white/90 leading-relaxed max-w-3xl drop-shadow-sm px-4">
               Triveneta Immobiliare – Premium Real Estate unisce affiancamento qualificato e tecnologie digitali avanzate.
             </p>
           </div>
         </PageHero>
 
         {/* Main Description */}
-        <section className="py-20 bg-card/30">
-          <div className="container mx-auto px-6">
-            <div className="grid lg:grid-cols-2 gap-16 items-center">
+        <section className="py-12 sm:py-16 md:py-20 bg-card/30">
+          <div className="container mx-auto px-4 sm:px-6">
+            <div className="grid lg:grid-cols-2 gap-8 sm:gap-12 md:gap-16 items-center">
               <div>
-                <p className="text-lg text-muted-foreground leading-relaxed mb-6">
+                <p className="text-base sm:text-lg text-muted-foreground leading-relaxed mb-4 sm:mb-6">
                   Grazie a un sistema proprietario basato su Big Data forniamo valutazioni rapide, precise e aggiornate, supportiamo la ricerca di immobili anche in location esclusive e affianchiamo investitori partendo da obiettivi di rendimento e pianificazione strategica.
                 </p>
-                <p className="text-lg text-muted-foreground leading-relaxed mb-8">
+                <p className="text-base sm:text-lg text-muted-foreground leading-relaxed mb-6 sm:mb-8">
                   Operiamo con partner specializzati per offrire ai nostri clienti un servizio completo, sicuro e chiavi in mano.
                 </p>
                 <Link 
                   to="/servizi"
-                  className="inline-flex items-center gap-3 text-primary font-medium hover:gap-4 transition-all"
+                  className="inline-flex items-center gap-2 sm:gap-3 text-primary font-medium hover:gap-4 transition-all text-sm sm:text-base"
                 >
-                  Scopri i nostri servizi <ArrowRight className="w-5 h-5" />
+                  Scopri i nostri servizi <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5" />
                 </Link>
               </div>
-              <div className="grid grid-cols-2 gap-6">
+              <div className="grid grid-cols-2 gap-4 sm:gap-6">
                 {[
                   { icon: Building2, title: "Big Data", desc: "Sistema proprietario per valutazioni precise" },
                   { icon: Users, title: "Network", desc: "Rete di partner qualificati" },
                   { icon: FileCheck, title: "Consulenza", desc: "Affiancamento strategico personalizzato" },
                   { icon: Calculator, title: "Rendimento", desc: "Obiettivi di investimento mirati" },
                 ].map((item, i) => (
-                  <div key={i} className="p-8 bg-card border border-border rounded-xl shadow-sm hover:border-primary/20 transition-colors">
-                    <item.icon className="w-10 h-10 text-primary mb-4" />
-                    <h3 className="font-serif text-xl font-medium text-foreground mb-2">{item.title}</h3>
-                    <p className="text-sm text-muted-foreground">{item.desc}</p>
+                  <div key={i} className="p-4 sm:p-6 md:p-8 bg-card border border-border rounded-xl shadow-sm hover:border-primary/20 transition-colors">
+                    <item.icon className="w-8 h-8 sm:w-10 sm:h-10 text-primary mb-3 sm:mb-4" />
+                    <h3 className="font-serif text-base sm:text-lg md:text-xl font-medium text-foreground mb-1 sm:mb-2">{item.title}</h3>
+                    <p className="text-xs sm:text-sm text-muted-foreground">{item.desc}</p>
                   </div>
                 ))}
               </div>
@@ -99,33 +99,33 @@ const ChiSiamo = () => {
         </section>
 
         {/* Team Section */}
-        <section className="py-20 md:py-32">
-          <div className="container mx-auto px-6">
-            <div className="text-center mb-16">
-              <p className="font-display text-primary text-sm font-medium tracking-[0.3em] mb-4">IL NOSTRO TEAM</p>
-              <h2 className="font-serif text-3xl md:text-5xl font-medium text-foreground mb-6">
+        <section className="py-12 sm:py-16 md:py-20 lg:py-24 xl:py-32">
+          <div className="container mx-auto px-4 sm:px-6">
+            <div className="text-center mb-10 sm:mb-12 md:mb-16">
+              <p className="font-display text-primary text-xs sm:text-sm font-medium tracking-[0.3em] mb-3 sm:mb-4">IL NOSTRO TEAM</p>
+              <h2 className="font-serif text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-medium text-foreground mb-4 sm:mb-6">
                 Incontra il Nostro Team
               </h2>
-              <p className="text-muted-foreground max-w-2xl mx-auto">
+              <p className="text-sm sm:text-base text-muted-foreground max-w-2xl mx-auto px-4">
                 Professionisti con competenze complementari nel settore immobiliare, finanziario e digitale.
               </p>
             </div>
             
-            <div className="grid md:grid-cols-3 gap-10 max-w-6xl mx-auto">
+            <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8 md:gap-10 max-w-6xl mx-auto">
               {team.map((member, i) => (
                 <div key={i} className="group relative overflow-hidden bg-card border border-border rounded-xl shadow-sm overflow-hidden hover:border-primary/20 transition-colors">
-                  <div className="aspect-[3/4] min-h-[320px] md:min-h-[400px] overflow-hidden bg-muted">
+                  <div className="aspect-[3/4] min-h-[280px] sm:min-h-[320px] md:min-h-[360px] lg:min-h-[400px] overflow-hidden bg-muted">
                     <img
                       src={member.photo}
                       alt={member.name}
                       className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
                     />
                   </div>
-                  <div className="p-6 text-center">
-                    <p className="font-display text-primary text-xs tracking-[0.2em] mb-2">{member.role}</p>
-                    <h3 className="font-serif text-xl font-medium text-foreground mb-1">{member.name}</h3>
-                    <p className="text-sm text-primary mb-3">{member.title}</p>
-                    <p className="text-muted-foreground text-sm">{member.desc}</p>
+                  <div className="p-4 sm:p-5 md:p-6 text-center">
+                    <p className="font-display text-primary text-[10px] sm:text-xs tracking-[0.2em] mb-1 sm:mb-2">{member.role}</p>
+                    <h3 className="font-serif text-lg sm:text-xl font-medium text-foreground mb-1">{member.name}</h3>
+                    <p className="text-xs sm:text-sm text-primary mb-2 sm:mb-3">{member.title}</p>
+                    <p className="text-xs sm:text-sm text-muted-foreground">{member.desc}</p>
                   </div>
                 </div>
               ))}
@@ -134,20 +134,20 @@ const ChiSiamo = () => {
         </section>
 
         {/* Partnerships */}
-        <section className="py-20 bg-card">
-          <div className="container mx-auto px-6">
-            <div className="text-center mb-16">
-              <p className="font-display text-primary text-sm font-medium tracking-[0.3em] mb-4">COLLABORAZIONI</p>
-              <h2 className="font-serif text-3xl md:text-5xl font-medium text-foreground">
+        <section className="py-12 sm:py-16 md:py-20 bg-card">
+          <div className="container mx-auto px-4 sm:px-6">
+            <div className="text-center mb-10 sm:mb-12 md:mb-16">
+              <p className="font-display text-primary text-xs sm:text-sm font-medium tracking-[0.3em] mb-3 sm:mb-4">COLLABORAZIONI</p>
+              <h2 className="font-serif text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-medium text-foreground">
                 Partnership Strategiche
               </h2>
             </div>
             
-            <div className="grid md:grid-cols-3 gap-8">
+            <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8 max-w-5xl mx-auto">
               {partnerships.map((partner, i) => (
-                <div key={i} className="p-8 bg-card border border-border rounded-xl shadow-sm text-center hover:border-primary/20 transition-colors">
-                  <h3 className="font-serif text-xl font-medium text-foreground mb-3">{partner.name}</h3>
-                  <p className="text-muted-foreground">{partner.desc}</p>
+                <div key={i} className="p-6 sm:p-8 bg-card border border-border rounded-xl shadow-sm text-center hover:border-primary/20 transition-colors">
+                  <h3 className="font-serif text-lg sm:text-xl font-medium text-foreground mb-2 sm:mb-3">{partner.name}</h3>
+                  <p className="text-sm sm:text-base text-muted-foreground">{partner.desc}</p>
                 </div>
               ))}
             </div>
@@ -155,24 +155,24 @@ const ChiSiamo = () => {
         </section>
 
         {/* CTA */}
-        <section className="py-20">
-          <div className="container mx-auto px-6 text-center">
-            <h2 className="font-serif text-3xl md:text-4xl font-medium text-foreground mb-6">
+        <section className="py-12 sm:py-16 md:py-20">
+          <div className="container mx-auto px-4 sm:px-6 text-center">
+            <h2 className="font-serif text-2xl sm:text-3xl md:text-4xl font-medium text-foreground mb-4 sm:mb-6">
               Inizia il tuo percorso con noi
             </h2>
-            <p className="text-muted-foreground mb-8 max-w-xl mx-auto">
+            <p className="text-sm sm:text-base text-muted-foreground mb-6 sm:mb-8 max-w-xl mx-auto">
               Scopri come possiamo aiutarti a raggiungere i tuoi obiettivi immobiliari.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
               <Link 
                 to="/investimenti"
-                className="px-10 py-4 rounded-lg bg-primary text-primary-foreground font-medium tracking-wider hover:bg-primary/90 transition-colors shadow-sm"
+                className="px-6 sm:px-8 md:px-10 py-3 sm:py-4 rounded-lg bg-primary text-primary-foreground text-sm sm:text-base font-medium tracking-wider hover:bg-primary/90 transition-colors shadow-sm"
               >
                 INVESTI CON NOI
               </Link>
               <Link 
                 to="/contatti"
-                className="px-10 py-4 rounded-lg border border-primary text-primary font-medium tracking-wider hover:bg-primary hover:text-primary-foreground transition-colors"
+                className="px-6 sm:px-8 md:px-10 py-3 sm:py-4 rounded-lg border border-primary text-primary text-sm sm:text-base font-medium tracking-wider hover:bg-primary hover:text-primary-foreground transition-colors"
               >
                 CONTATTACI
               </Link>
