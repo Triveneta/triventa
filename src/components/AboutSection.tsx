@@ -117,7 +117,7 @@ const AboutSection = () => {
                   Sintija Birgele
                 </h4>
                 <p className="text-muted-foreground text-sm lg:text-base">
-                  IT Expert, European Management Partner
+                  IT Expert, partner of European Management
                 </p>
               </div>
             </div>
