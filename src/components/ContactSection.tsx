@@ -61,7 +61,7 @@ const ContactSection = () => {
           </div>
 
           {/* Contact Form */}
-          <div className="bg-background/80 p-8 lg:p-10 border border-white/10 rounded-sm">
+          <div className="bg-card p-8 lg:p-10 border border-border rounded-xl shadow-sm">
             <form onSubmit={handleSubmit} className="space-y-6">
               <div>
                 <label className="block text-sm font-medium text-foreground mb-2">

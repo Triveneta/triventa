@@ -48,7 +48,7 @@ const LuxuryShowcase = () => {
               to={item.href}
               className="group group/card block"
             >
-              <div className="relative overflow-hidden aspect-[4/3] lg:aspect-[3/4] rounded-sm border border-white/10 bg-card">
+              <div className="relative overflow-hidden aspect-[4/3] lg:aspect-[3/4] rounded-xl border border-border bg-card shadow-sm">
                 <img
                   src={item.image}
                   alt={item.title}

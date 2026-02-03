@@ -1,6 +1,8 @@
 import { Link } from "react-router-dom";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import PageHero from "@/components/PageHero";
+import { HERO_IMAGES } from "@/lib/hero-images";
 import { TrendingUp, Building, Briefcase, Users, CheckCircle } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -91,24 +93,21 @@ const Investimenti = () => {
   return (
     <div className="min-h-screen bg-background">
       <Header />
-      <main className="pt-24">
-        {/* Hero Section */}
-        <section className="py-20 md:py-32">
-          <div className="container mx-auto px-6">
-            <div className="max-w-4xl">
-              <p className="font-display text-primary text-sm font-medium tracking-[0.3em] mb-6">INVESTI IN IMMOBILI</p>
-              <h1 className="font-serif text-4xl md:text-6xl lg:text-7xl font-medium text-foreground leading-[1.1] mb-8">
-                Opportunità immobiliari ad alto potenziale
-              </h1>
-              <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed max-w-3xl">
-                In Triveneta Immobiliare affianchiamo investitori e aziende selezionando opportunità in base ai parametri di rischio e al capitale disponibile.
-              </p>
-            </div>
+      <main>
+        <PageHero imageUrl={HERO_IMAGES.investimenti}>
+          <div className="max-w-4xl">
+            <p className="font-display text-amber-200 text-sm font-medium tracking-[0.3em] mb-6">INVESTI IN IMMOBILI</p>
+            <h1 className="font-serif text-4xl md:text-6xl lg:text-7xl font-medium text-white leading-[1.1] mb-8 drop-shadow-sm">
+              Opportunità immobiliari ad alto potenziale
+            </h1>
+            <p className="text-xl md:text-2xl text-white/90 leading-relaxed max-w-3xl drop-shadow-sm">
+              In Triveneta Immobiliare affianchiamo investitori e aziende selezionando opportunità in base ai parametri di rischio e al capitale disponibile.
+            </p>
           </div>
-        </section>
+        </PageHero>
 
         {/* Target Clients */}
-        <section className="py-16 bg-card">
+        <section className="py-20 bg-card/30">
           <div className="container mx-auto px-6">
             <div className="text-center mb-12">
               <p className="font-display text-primary text-sm font-medium tracking-[0.3em] mb-4">CHI SONO I NOSTRI CLIENTI</p>
@@ -119,7 +118,7 @@ const Investimenti = () => {
             
             <div className="grid md:grid-cols-3 gap-8">
               {targetClients.map((client, i) => (
-                <div key={i} className="text-center p-10 bg-background border border-border">
+                <div key={i} className="text-center p-10 bg-card border border-border rounded-xl shadow-sm hover:border-primary/20 transition-colors">
                   <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mb-6 mx-auto">
                     <client.icon className="w-7 h-7 text-primary" />
                   </div>
@@ -145,7 +144,7 @@ const Investimenti = () => {
                 </p>
               </div>
               
-              <form onSubmit={handleSubmit} className="bg-card border border-border p-10 space-y-10">
+              <form onSubmit={handleSubmit} className="bg-card border border-border rounded-xl shadow-sm p-10 space-y-10">
                 {/* Contact Info */}
                 <div>
                   <h3 className="font-serif text-xl font-medium text-foreground mb-6">Dati di Contatto</h3>
@@ -316,7 +315,7 @@ const Investimenti = () => {
                   />
                 </div>
 
-                <Button type="submit" className="w-full py-6 text-base tracking-wider">
+                <Button type="submit" className="w-full py-6 text-base tracking-wider rounded-lg shadow-sm">
                   INVIA RICHIESTA
                 </Button>
               </form>

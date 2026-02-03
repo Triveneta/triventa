@@ -30,29 +30,29 @@ const services = [
 
 const ServicesSection = () => {
   return (
-    <section className="relative py-28 lg:py-36 bg-card/50" id="servizi">
-      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent" />
+    <section className="relative py-32 lg:py-40 bg-card/30" id="servizi">
+      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/20 to-transparent" />
       <div className="container mx-auto px-6">
-        <div className="text-center mb-20 lg:mb-24">
-          <p className="font-display text-primary text-xs font-medium tracking-[0.35em] mb-4">I NOSTRI SERVIZI</p>
-          <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-medium text-foreground tracking-tight">
+        <div className="text-center mb-24 lg:mb-28">
+          <p className="font-display text-primary text-xs font-medium tracking-[0.35em] mb-6">I NOSTRI SERVIZI</p>
+          <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl font-medium text-foreground tracking-tight">
             Esperienza e Professionalità
           </h2>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-10 lg:gap-16">
+        <div className="grid md:grid-cols-3 gap-8 lg:gap-12 max-w-6xl mx-auto">
           {services.map((service, index) => (
             <Link
               key={index}
               to={service.href}
-              className="group text-center p-8 lg:p-10 rounded-sm border border-white/5 bg-background/50 hover:border-primary/20 hover:bg-background/80 transition-all duration-500"
+              className="group text-center p-10 lg:p-12 rounded-xl border border-border/50 bg-card shadow-sm hover:border-primary/30 hover:shadow-lg transition-all duration-300"
             >
-              <div className="w-20 h-20 mx-auto rounded-full border border-primary/20 bg-primary/5 flex items-center justify-center mb-8 group-hover:border-primary/40 group-hover:bg-primary/10 transition-colors duration-500">
-                <service.icon className="w-9 h-9 text-primary" />
+              <div className="w-24 h-24 mx-auto rounded-full border border-primary/15 bg-primary/5 flex items-center justify-center mb-8 group-hover:border-primary/30 group-hover:bg-primary/10 transition-colors duration-300">
+                <service.icon className="w-10 h-10 text-primary" />
               </div>
-              <p className="font-display text-primary text-[10px] font-medium tracking-[0.35em] mb-3">{service.subtitle}</p>
-              <h3 className="font-serif text-2xl lg:text-3xl font-medium text-foreground mb-4 tracking-tight">{service.title}</h3>
-              <p className="text-muted-foreground mb-8 leading-relaxed text-sm lg:text-base">{service.description}</p>
+              <p className="font-display text-primary text-[10px] font-medium tracking-[0.35em] mb-4">{service.subtitle}</p>
+              <h3 className="font-serif text-2xl lg:text-3xl font-medium text-foreground mb-5 tracking-tight">{service.title}</h3>
+              <p className="text-muted-foreground mb-8 leading-relaxed text-base">{service.description}</p>
               <span className="inline-flex items-center gap-2 text-primary text-sm font-medium tracking-widest group-hover:gap-3 transition-all">
                 {service.buttonText}
                 <ArrowRight className="w-4 h-4" />

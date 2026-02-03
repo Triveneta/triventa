@@ -1,5 +1,7 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import PageHero from "@/components/PageHero";
+import { HERO_IMAGES } from "@/lib/hero-images";
 import { Mail, Phone, MapPin, Clock } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -57,24 +59,21 @@ const Contatti = () => {
   return (
     <div className="min-h-screen bg-background">
       <Header />
-      <main className="pt-24">
-        {/* Hero Section */}
-        <section className="py-20 md:py-32">
-          <div className="container mx-auto px-6">
-            <div className="max-w-4xl">
-              <p className="font-display text-primary text-sm font-medium tracking-[0.3em] mb-6">CONTATTI</p>
-              <h1 className="font-serif text-4xl md:text-6xl lg:text-7xl font-medium text-foreground leading-[1.1] mb-8">
-                Parliamo del tuo progetto
-              </h1>
-              <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed max-w-3xl">
-                Siamo qui per rispondere alle tue domande e aiutarti a trovare la soluzione perfetta per le tue esigenze immobiliari.
-              </p>
-            </div>
+      <main>
+        <PageHero imageUrl={HERO_IMAGES.contatti}>
+          <div className="max-w-4xl">
+            <p className="font-display text-amber-200 text-sm font-medium tracking-[0.3em] mb-6">CONTATTI</p>
+            <h1 className="font-serif text-4xl md:text-6xl lg:text-7xl font-medium text-white leading-[1.1] mb-8 drop-shadow-sm">
+              Parliamo del tuo progetto
+            </h1>
+            <p className="text-xl md:text-2xl text-white/90 leading-relaxed max-w-3xl drop-shadow-sm">
+              Siamo qui per rispondere alle tue domande e aiutarti a trovare la soluzione perfetta per le tue esigenze immobiliari.
+            </p>
           </div>
-        </section>
+        </PageHero>
 
         {/* Contact Info + Form */}
-        <section className="py-16 bg-card">
+        <section className="py-20 bg-card/30">
           <div className="container mx-auto px-6">
             <div className="grid lg:grid-cols-2 gap-16">
               {/* Contact Info */}
@@ -86,7 +85,7 @@ const Contatti = () => {
                 
                 <div className="space-y-6 mb-12">
                   {contactInfo.map((info, i) => (
-                    <div key={i} className="flex items-start gap-4 p-6 bg-background border border-border">
+                    <div key={i} className="flex items-start gap-4 p-6 bg-card border border-border rounded-xl shadow-sm">
                       <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
                         <info.icon className="w-5 h-5 text-primary" />
                       </div>
@@ -104,7 +103,7 @@ const Contatti = () => {
                   ))}
                 </div>
 
-                <div className="p-6 bg-primary/5 border border-primary/20">
+                <div className="p-6 bg-primary/5 border border-primary/20 rounded-lg">
                   <div className="flex items-center gap-3 mb-3">
                     <Clock className="w-5 h-5 text-primary" />
                     <h3 className="font-medium text-foreground">Orari di Disponibilità</h3>
@@ -117,7 +116,7 @@ const Contatti = () => {
               </div>
 
               {/* Contact Form */}
-              <div className="bg-background border border-border p-10">
+              <div className="bg-card border border-border rounded-xl shadow-sm p-10">
                 <h3 className="font-serif text-2xl font-medium text-foreground mb-6">Scrivici un Messaggio</h3>
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div className="space-y-2">
@@ -171,7 +170,7 @@ const Contatti = () => {
                       required
                     />
                   </div>
-                  <Button type="submit" className="w-full py-6 text-base tracking-wider">
+                  <Button type="submit" className="w-full py-6 text-base tracking-wider rounded-lg shadow-sm">
                     INVIA MESSAGGIO
                   </Button>
                 </form>
