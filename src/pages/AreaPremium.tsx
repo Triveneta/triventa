@@ -1,6 +1,8 @@
 import { Link } from "react-router-dom";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import PageHero from "@/components/PageHero";
+import { HERO_IMAGES } from "@/lib/hero-images";
 import { Crown, Lock, MapPin, FileText, Calculator, Eye, CheckCircle } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -50,34 +52,35 @@ const AreaPremium = () => {
       <Header />
       <main className="pt-24">
         {/* Hero Section */}
-        <section className="py-20 md:py-32">
-          <div className="container mx-auto px-6">
-            <div className="text-center max-w-4xl mx-auto">
-              <div className="w-24 h-24 mx-auto rounded-full bg-primary/10 flex items-center justify-center mb-8">
-                <Crown className="w-12 h-12 text-primary" />
-              </div>
-              <p className="font-display text-primary text-sm font-medium tracking-[0.3em] mb-6">AREA CLIENTI PREMIUM</p>
-              <h1 className="font-serif text-4xl md:text-6xl lg:text-7xl font-medium text-foreground leading-[1.1] mb-8">
-                Riservatezza, chiarezza e competenza
-              </h1>
-              <p className="text-xl text-muted-foreground leading-relaxed max-w-2xl mx-auto">
-                Cosa trovano qui i nostri investitori iscritti? Accesso esclusivo a opportunità selezionate e consulenza personalizzata.
-              </p>
+        <PageHero imageUrl={HERO_IMAGES.areaPremium}>
+          <div className="text-center max-w-4xl mx-auto">
+            <div className="w-24 h-24 mx-auto rounded-full bg-white/10 flex items-center justify-center mb-8">
+              <Crown className="w-12 h-12 text-amber-200" />
             </div>
+            <p className="font-display text-amber-200 text-sm font-medium tracking-[0.3em] mb-6">AREA CLIENTI PREMIUM</p>
+            <h1 className="font-serif text-4xl md:text-6xl lg:text-7xl font-medium text-white leading-[1.1] mb-8 drop-shadow-sm">
+              Riservatezza, chiarezza e competenza
+            </h1>
+            <p className="text-xl text-white/90 leading-relaxed max-w-2xl mx-auto drop-shadow-sm">
+              Cosa trovano qui i nostri investitori iscritti? Accesso esclusivo a opportunità selezionate e consulenza personalizzata.
+            </p>
           </div>
-        </section>
+        </PageHero>
 
         {/* Benefits */}
-        <section className="py-16 bg-card">
+        <section className="py-20 bg-card/30">
           <div className="container mx-auto px-6">
+            <div className="text-center mb-12">
+              <p className="font-display text-primary text-xs font-medium tracking-[0.3em] mb-4">COSA TROVANO QUI I NOSTRI INVESTITORI ISCRITTI?</p>
+            </div>
             <div className="grid md:grid-cols-3 gap-8">
               {benefits.map((benefit, i) => (
-                <div key={i} className="text-center p-10 bg-background border border-border">
+                <div key={i} className="text-center p-10 bg-card border border-border rounded-xl shadow-sm hover:border-primary/20 transition-colors">
                   <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mb-6 mx-auto">
                     <benefit.icon className="w-7 h-7 text-primary" />
                   </div>
                   <h3 className="font-serif text-xl font-medium text-foreground mb-3">{benefit.title}</h3>
-                  <p className="text-muted-foreground">{benefit.desc}</p>
+                  <p className="text-muted-foreground text-sm leading-relaxed">{benefit.desc}</p>
                 </div>
               ))}
             </div>
@@ -111,8 +114,8 @@ const AreaPremium = () => {
               </div>
 
               {/* Login Form */}
-              <div className="bg-card border border-border p-10">
-                <h3 className="font-serif text-2xl font-medium text-foreground mb-6 text-center">Accesso Area Riservata</h3>
+              <div className="bg-card border border-border rounded-xl shadow-sm p-10">
+                <h3 className="font-display text-sm font-medium tracking-[0.2em] text-foreground mb-6 text-center">ACCESSO CLIENTI PREMIUM</h3>
                 <form onSubmit={handleLogin} className="space-y-6">
                   <div className="space-y-2">
                     <Label htmlFor="username">Username</Label>
@@ -133,12 +136,12 @@ const AreaPremium = () => {
                       required 
                     />
                   </div>
-                  <Button type="submit" className="w-full py-6 text-base tracking-wider">
+                  <Button type="submit" className="w-full py-6 text-base tracking-wider rounded-lg bg-primary text-primary-foreground hover:bg-primary/90 shadow-sm">
                     ACCEDI
                   </Button>
                 </form>
                 
-                <div className="mt-8 p-6 bg-primary/5 border border-primary/20 text-center">
+                <div className="mt-8 p-6 bg-primary/5 border border-primary/20 rounded-lg text-center">
                   <p className="text-sm text-muted-foreground mb-4">
                     L'accesso all'area è riservato ai Clienti Premium abbonati.
                   </p>

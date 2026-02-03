@@ -1,6 +1,8 @@
 import { Link } from "react-router-dom";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import PageHero from "@/components/PageHero";
+import { HERO_IMAGES } from "@/lib/hero-images";
 import { Users, Award, TrendingUp, Handshake, CheckCircle } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -63,24 +65,21 @@ const LavoraConNoi = () => {
   return (
     <div className="min-h-screen bg-background">
       <Header />
-      <main className="pt-24">
-        {/* Hero Section */}
-        <section className="py-20 md:py-32">
-          <div className="container mx-auto px-6">
-            <div className="max-w-4xl">
-              <p className="font-display text-primary text-sm font-medium tracking-[0.3em] mb-6">LAVORA CON NOI</p>
-              <h1 className="font-serif text-4xl md:text-6xl lg:text-7xl font-medium text-foreground leading-[1.1] mb-8">
-                Costruiamo insieme il futuro del real estate
-              </h1>
-              <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed max-w-3xl">
-                Triveneta Immobiliare non è una semplice agenzia immobiliare. Costruiamo competenze, relazioni e percorsi di crescita nel real estate di qualità.
-              </p>
-            </div>
+      <main>
+        <PageHero imageUrl={HERO_IMAGES.lavoraConNoi}>
+          <div className="max-w-4xl">
+            <p className="font-display text-amber-200 text-sm font-medium tracking-[0.3em] mb-6">LAVORA CON NOI</p>
+            <h1 className="font-serif text-4xl md:text-6xl lg:text-7xl font-medium text-white leading-[1.1] mb-8 drop-shadow-sm">
+              Costruiamo insieme il futuro del real estate
+            </h1>
+            <p className="text-xl md:text-2xl text-white/90 leading-relaxed max-w-3xl drop-shadow-sm">
+              Triveneta Immobiliare non è una semplice agenzia immobiliare. Costruiamo competenze, relazioni e percorsi di crescita nel real estate di qualità.
+            </p>
           </div>
-        </section>
+        </PageHero>
 
         {/* Philosophy */}
-        <section className="py-16 bg-card">
+        <section className="py-20 bg-card/30">
           <div className="container mx-auto px-6">
             <div className="max-w-4xl mx-auto text-center">
               <p className="text-xl text-muted-foreground leading-relaxed mb-8">
@@ -105,7 +104,7 @@ const LavoraConNoi = () => {
             
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
               {benefits.map((benefit, i) => (
-                <div key={i} className="text-center p-8 bg-card border border-border">
+                <div key={i} className="text-center p-8 bg-card border border-border rounded-xl shadow-sm hover:border-primary/20 transition-colors">
                   <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mb-6 mx-auto">
                     <benefit.icon className="w-7 h-7 text-primary" />
                   </div>
@@ -118,7 +117,7 @@ const LavoraConNoi = () => {
         </section>
 
         {/* What We Look For + Form */}
-        <section className="py-20 bg-card">
+        <section className="py-20 bg-card/30">
           <div className="container mx-auto px-6">
             <div className="grid lg:grid-cols-2 gap-16">
               {/* Requirements */}
@@ -146,7 +145,7 @@ const LavoraConNoi = () => {
               </div>
 
               {/* Application Form */}
-              <div className="bg-background border border-border p-10">
+              <div className="bg-card border border-border rounded-xl shadow-sm p-10">
                 <h3 className="font-serif text-2xl font-medium text-foreground mb-6">Invia la tua Candidatura</h3>
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div className="grid grid-cols-2 gap-4">
@@ -209,7 +208,7 @@ const LavoraConNoi = () => {
                       required
                     />
                   </div>
-                  <Button type="submit" className="w-full py-6 text-base tracking-wider">
+                  <Button type="submit" className="w-full py-6 text-base tracking-wider rounded-lg shadow-sm">
                     INVIA CANDIDATURA
                   </Button>
                 </form>

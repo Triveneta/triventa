@@ -3,7 +3,7 @@ import { Facebook, Instagram, Linkedin, Youtube } from "lucide-react";
 
 const Footer = () => {
   return (
-    <footer className="relative bg-card border-t border-white/10">
+    <footer className="relative bg-card border-t border-border">
       <div className="container mx-auto px-6 py-16">
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Brand */}
@@ -51,9 +51,22 @@ const Footer = () => {
         </div>
 
         <div className="border-t border-border mt-12 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-muted-foreground text-sm">
-            © 2026 Triveneta Immobiliare. Tutti i diritti riservati.
-          </p>
+          <div className="flex flex-col gap-1">
+            <p className="text-muted-foreground text-sm">
+              © 2026 Triveneta Immobiliare. Tutti i diritti riservati.
+            </p>
+            <p className="text-muted-foreground text-xs">
+              Sviluppato da{" "}
+              <a
+                href="https://de.linkedin.com/in/sintija-birgele"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-primary transition-colors"
+              >
+                Sintija Birgele
+              </a>
+            </p>
+          </div>
           <div className="flex gap-6 text-sm">
             <Link to="/" className="text-muted-foreground hover:text-primary transition-colors">Privacy</Link>
             <Link to="/" className="text-muted-foreground hover:text-primary transition-colors">Cookie</Link>

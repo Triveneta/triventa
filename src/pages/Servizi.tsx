@@ -1,6 +1,8 @@
 import { Link } from "react-router-dom";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import PageHero from "@/components/PageHero";
+import { HERO_IMAGES } from "@/lib/hero-images";
 import { 
   BarChart3, 
   Search, 
@@ -54,30 +56,27 @@ const Servizi = () => {
   return (
     <div className="min-h-screen bg-background">
       <Header />
-      <main className="pt-24">
-        {/* Hero Section */}
-        <section className="py-20 md:py-32">
-          <div className="container mx-auto px-6">
-            <div className="max-w-4xl">
-              <p className="font-display text-primary text-sm font-medium tracking-[0.3em] mb-6">SERVIZI</p>
-              <h1 className="font-serif text-4xl md:text-6xl lg:text-7xl font-medium text-foreground leading-[1.1] mb-8">
-                Servizi immobiliari avanzati
-              </h1>
-              <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed max-w-3xl">
-                Integriamo competenze specialistiche, tecnologia digitale e una rete di partner qualificati, garantendo un approccio strutturato e orientato al valore.
-              </p>
-            </div>
+      <main>
+        <PageHero imageUrl={HERO_IMAGES.servizi}>
+          <div className="max-w-4xl">
+            <p className="font-display text-amber-200 text-sm font-medium tracking-[0.3em] mb-6">SERVIZI</p>
+            <h1 className="font-serif text-4xl md:text-6xl lg:text-7xl font-medium text-white leading-[1.1] mb-8 drop-shadow-sm">
+              Servizi immobiliari avanzati
+            </h1>
+            <p className="text-xl md:text-2xl text-white/90 leading-relaxed max-w-3xl drop-shadow-sm">
+              Integriamo competenze specialistiche, tecnologia digitale e una rete di partner qualificati, garantendo un approccio strutturato e orientato al valore.
+            </p>
           </div>
-        </section>
+        </PageHero>
 
         {/* Services Grid */}
-        <section className="py-16 bg-card">
+        <section className="py-20 bg-card/30">
           <div className="container mx-auto px-6">
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               {services.map((service, i) => (
                 <div 
                   key={i} 
-                  className="group p-10 bg-background border border-border hover:border-primary transition-all duration-300"
+                  className="group p-10 bg-card border border-border rounded-xl shadow-sm hover:border-primary/20 transition-all duration-300"
                 >
                   <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mb-6 group-hover:bg-primary/20 transition-colors">
                     <service.icon className="w-7 h-7 text-primary" />
@@ -112,7 +111,7 @@ const Servizi = () => {
                   Scopri chi siamo <ArrowRight className="w-5 h-5" />
                 </Link>
               </div>
-              <div className="bg-card border border-border p-12">
+              <div className="bg-card border border-border rounded-xl shadow-sm p-12">
                 <div className="space-y-8">
                   <div>
                     <p className="font-serif text-5xl font-medium text-primary mb-2">01</p>
@@ -136,7 +135,7 @@ const Servizi = () => {
         </section>
 
         {/* CTA */}
-        <section className="py-20 bg-card">
+        <section className="py-20 bg-card/30">
           <div className="container mx-auto px-6 text-center">
             <h2 className="font-serif text-3xl md:text-4xl font-medium text-foreground mb-6">
               Hai bisogno di una consulenza?
@@ -146,7 +145,7 @@ const Servizi = () => {
             </p>
             <Link 
               to="/contatti"
-              className="inline-block px-10 py-4 bg-primary text-primary-foreground font-medium tracking-wider hover:bg-primary/90 transition-colors"
+              className="inline-block px-10 py-4 rounded-lg bg-primary text-primary-foreground font-medium tracking-wider hover:bg-primary/90 transition-colors shadow-sm"
             >
               RICHIEDI INFORMAZIONI
             </Link>

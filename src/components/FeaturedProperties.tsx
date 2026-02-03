@@ -43,7 +43,7 @@ const properties: Property[] = [
 
 const PropertyCard = ({ property }: { property: Property }) => (
   <Link to="/vendita" className="group block">
-    <div className="relative overflow-hidden mb-5 rounded-sm border border-white/5">
+    <div className="relative overflow-hidden mb-5 rounded-xl border border-border shadow-sm group-hover:shadow-md transition-shadow duration-300">
       <img
         src={property.image}
         alt={property.title}

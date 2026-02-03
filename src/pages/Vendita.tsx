@@ -2,6 +2,8 @@ import { useLocation, useNavigate } from "react-router-dom";
 import { useEffect } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import PageHero from "@/components/PageHero";
+import { HERO_IMAGES } from "@/lib/hero-images";
 import { MapPin, X } from "lucide-react";
 
 const properties = [
@@ -33,23 +35,25 @@ const Vendita = () => {
   return (
     <div className="min-h-screen bg-background">
       <Header />
-      <main className="pt-24 pb-16">
-        <div className="container mx-auto px-6">
-          <div className="mb-12">
-            <p className="font-display text-primary text-sm font-medium tracking-[0.2em] mb-4">IMMOBILI IN VENDITA</p>
-            <h1 className="font-serif text-4xl md:text-5xl font-medium text-foreground">Trova la Tua Casa</h1>
+      <main className="pb-16">
+        <PageHero imageUrl={HERO_IMAGES.vendita}>
+          <div className="max-w-4xl">
+            <p className="font-display text-amber-200 text-sm font-medium tracking-[0.2em] mb-4">IMMOBILI IN VENDITA</p>
+            <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl font-medium text-white drop-shadow-sm">Trova la Tua Casa</h1>
           </div>
+        </PageHero>
 
+        <div className="container mx-auto px-6 -mt-8 relative z-10">
           {selectedProperty && (
             <section
               id={`property-${selectedProperty.id}`}
-              className="mb-16 scroll-mt-28 rounded-sm border border-white/10 bg-card/50 overflow-hidden"
+              className="mb-16 scroll-mt-28 rounded-xl border border-border bg-card shadow-sm overflow-hidden"
             >
               <div className="relative">
                 <button
                   type="button"
                   onClick={closeDetail}
-                  className="absolute top-4 right-4 z-10 p-2 rounded-full bg-background/80 text-foreground hover:bg-primary hover:text-primary-foreground transition-colors"
+                  className="absolute top-4 right-4 z-10 p-2 rounded-full bg-card/90 text-foreground hover:bg-primary hover:text-primary-foreground transition-colors shadow-sm"
                   aria-label="Chiudi"
                 >
                   <X className="w-5 h-5" />
@@ -76,7 +80,7 @@ const Vendita = () => {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {properties.map((property) => (
               <a key={property.id} href={`#property-${property.id}`} className="group block">
-                <div className="relative overflow-hidden mb-4">
+                <div className="relative overflow-hidden mb-4 rounded-xl border border-border shadow-sm group-hover:shadow-md transition-shadow">
                   <img src={property.image} alt={property.title} className="w-full h-64 object-cover transition-transform duration-700 group-hover:scale-105" />
                 </div>
                 <div className="flex items-center gap-2 text-muted-foreground mb-2">
