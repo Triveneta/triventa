@@ -25,15 +25,8 @@ const Hero = () => {
         />
       </div>
 
-      {/* Content - Centered */}
-      <div className="relative z-10 flex-1 flex flex-col items-center justify-center px-6">
-        <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl font-medium text-foreground text-center mb-4 drop-shadow-lg tracking-wide">
-          Triveneta Immobiliare
-        </h2>
-        <p className="text-lg md:text-xl text-foreground/90 text-center max-w-xl drop-shadow-md">
-          Il tuo partner di fiducia per trovare e vendere casa in Triveneto.
-        </p>
-      </div>
+      {/* Empty space for full-screen hero image */}
+      <div className="relative z-10 flex-1" />
 
       {/* Bottom CTAs - Centered menu with CASE VACANZA */}
       <div className="relative z-10 pb-8 px-6 flex flex-col items-center">
