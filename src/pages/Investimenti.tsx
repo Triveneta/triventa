@@ -93,21 +93,21 @@ const Investimenti = () => {
   return (
     <div className="min-h-screen bg-background">
       <Header />
-      <main>
+      <main className="pt-24">
         <PageHero imageUrl={HERO_IMAGES.investimenti}>
           <div className="max-w-4xl px-4">
             <p className="font-display text-amber-200 text-xs sm:text-sm font-medium tracking-[0.3em] mb-4 sm:mb-6">INVESTI IN IMMOBILI</p>
-            <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-medium text-white leading-[1.1] mb-6 sm:mb-8 drop-shadow-sm">
-              Opportunità immobiliari ad alto potenziale
+            <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-medium text-white leading-[1.1] mb-6 sm:mb-8 drop-shadow-sm">
+              Opportunità immobiliari
             </h1>
-            <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-white/90 leading-relaxed max-w-3xl drop-shadow-sm">
-              In Triveneta Immobiliare affianchiamo investitori e aziende selezionando opportunità in base ai parametri di rischio e al capitale disponibile.
+            <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-white/90 leading-relaxed max-w-3xl drop-shadow-sm font-light">
+              In Triveneta Immobiliare affianchiamo investitori e aziende selezionando opportunità immobiliari ad alto potenziale in base ai parametri di rischio e al capitale disponibile. Non solo operazioni immobiliari singole ma anche percorsi di investimento costruiti su misura.
             </p>
           </div>
         </PageHero>
 
         {/* Target Clients */}
-        <section className="py-12 sm:py-16 md:py-20 bg-card/30">
+        <section className="pt-12 sm:pt-16 md:pt-20 bg-card/30">
           <div className="container mx-auto px-4 sm:px-6">
             <div className="text-center mb-8 sm:mb-10 md:mb-12">
               <p className="font-display text-primary text-xs sm:text-sm font-medium tracking-[0.3em] mb-3 sm:mb-4">CHI SONO I NOSTRI CLIENTI</p>

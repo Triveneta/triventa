@@ -6,8 +6,6 @@ export const HERO_IMAGES = {
     "https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=1920&q=85",
   acquisto:
     "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1920&q=85",
-  vendita:
-    "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1920&q=85",
   investimenti:
     "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=1920&q=85",
   servizi:

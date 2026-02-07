@@ -9,7 +9,7 @@ interface PageHeroProps {
 }
 
 const PageHero = ({ imageUrl, children, className = "" }: PageHeroProps) => (
-  <section className="relative py-16 sm:py-20 md:py-24 lg:py-32 xl:py-40 overflow-hidden">
+  <section className="relative py-16 sm:py-20 md:py-24 overflow-hidden">
     <div
       className="absolute inset-0 bg-cover bg-center bg-no-repeat"
       style={{ backgroundImage: `url(${imageUrl})` }}
@@ -19,7 +19,7 @@ const PageHero = ({ imageUrl, children, className = "" }: PageHeroProps) => (
       className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/50 to-black/75"
       aria-hidden
     />
-    <div className={`container relative z-10 mx-auto px-4 sm:px-6 ${className}`}>
+    <div className={`container relative z-10 mx-auto px-4 sm:px-6 lg:px-24 ${className}`}>
       {children}
     </div>
   </section>

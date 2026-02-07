@@ -59,14 +59,14 @@ const Contatti = () => {
   return (
     <div className="min-h-screen bg-background">
       <Header />
-      <main>
+      <main className="pt-24">
         <PageHero imageUrl={HERO_IMAGES.contatti}>
           <div className="max-w-4xl px-4">
             <p className="font-display text-amber-200 text-xs sm:text-sm font-medium tracking-[0.3em] mb-4 sm:mb-6">CONTATTI</p>
-            <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-medium text-white leading-[1.1] mb-6 sm:mb-8 drop-shadow-sm">
-              Parliamo del tuo progetto
+            <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-medium text-white leading-[1.1] mb-6 sm:mb-8 drop-shadow-sm">
+              I Nostri Recapiti
             </h1>
-            <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-white/90 leading-relaxed max-w-3xl drop-shadow-sm">
+            <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-white/90 leading-relaxed max-w-3xl drop-shadow-sm font-light">
               Siamo qui per rispondere alle tue domande e aiutarti a trovare la soluzione perfetta per le tue esigenze immobiliari.
             </p>
           </div>
@@ -77,33 +77,30 @@ const Contatti = () => {
           <div className="container mx-auto px-4 sm:px-6">
             <div className="grid lg:grid-cols-2 gap-8 sm:gap-12 md:gap-16">
               {/* Contact Info */}
-              <div>
-                <p className="font-display text-primary text-xs sm:text-sm font-medium tracking-[0.3em] mb-3 sm:mb-4">COME CONTATTARCI</p>
-                <h2 className="font-serif text-2xl sm:text-3xl md:text-4xl font-medium text-foreground mb-6 sm:mb-8">
-                  I Nostri Recapiti
-                </h2>
-                
-                <div className="space-y-4 sm:space-y-6 mb-8 sm:mb-10 md:mb-12">
-                  {contactInfo.map((info, i) => (
-                    <div key={i} className="flex items-start gap-3 sm:gap-4 p-4 sm:p-6 bg-card border border-border rounded-xl shadow-sm">
-                      <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
-                        <info.icon className="w-4 h-4 sm:w-5 sm:h-5 text-primary" />
+              <div>                
+                <div className="mb-8 sm:mb-10 md:mb-12">
+                  <div className="bg-card border border-border rounded-xl shadow-sm divide-y divide-transparent overflow-hidden">
+                    {contactInfo.map((info, i) => (
+                      <div key={i} className="flex items-start gap-3 sm:gap-4 p-4 sm:p-6">
+                        <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
+                          <info.icon className="w-4 h-4 sm:w-5 sm:h-5 text-primary" />
+                        </div>
+                        <div className="flex-1 min-w-0">
+                          <h3 className="font-medium text-sm sm:text-base text-foreground mb-1">{info.title}</h3>
+                          {info.link ? (
+                            <a href={info.link} className="text-xs sm:text-sm text-muted-foreground hover:text-primary transition-colors break-all">
+                              {info.value}
+                            </a>
+                          ) : (
+                            <p className="text-xs sm:text-sm text-muted-foreground">{info.value}</p>
+                          )}
+                        </div>
                       </div>
-                      <div className="flex-1 min-w-0">
-                        <h3 className="font-medium text-sm sm:text-base text-foreground mb-1">{info.title}</h3>
-                        {info.link ? (
-                          <a href={info.link} className="text-xs sm:text-sm text-muted-foreground hover:text-primary transition-colors break-all">
-                            {info.value}
-                          </a>
-                        ) : (
-                          <p className="text-xs sm:text-sm text-muted-foreground">{info.value}</p>
-                        )}
-                      </div>
-                    </div>
-                  ))}
+                    ))}
+                  </div>
                 </div>
 
-                <div className="p-4 sm:p-6 bg-primary/5 border border-primary/20 rounded-lg">
+                <div className="p-4 sm:p-6 bg-white border border-primary/20 rounded-lg">
                   <div className="flex items-center gap-2 sm:gap-3 mb-2 sm:mb-3">
                     <Clock className="w-4 h-4 sm:w-5 sm:h-5 text-primary" />
                     <h3 className="font-medium text-sm sm:text-base text-foreground">Orari di Disponibilità</h3>

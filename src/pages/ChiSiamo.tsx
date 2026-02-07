@@ -4,44 +4,37 @@ import Footer from "@/components/Footer";
 import PageHero from "@/components/PageHero";
 import { HERO_IMAGES } from "@/lib/hero-images";
 import { Users, Building2, FileCheck, Calculator, ArrowRight } from "lucide-react";
-
-const partnerships = [
-  {
-    name: "European Management Institute",
-    desc: "Agevolazioni, strumenti digitali e automazione dei processi"
-  },
-  {
-    name: "UNSIC",
-    desc: "Supporto negli adempimenti burocratici e nei passaggi ereditari"
-  },
-  {
-    name: "Studio Decaminada",
-    desc: "Consulenza in ambito fiscale e fiscalità internazionale"
-  }
-];
+// Removed partnerships array
 
 const team = [
   {
     name: "Luca Bazzanella",
     role: "Co-Founder",
-    title: "Manager",
-    desc: "Esperto in consulenza strategica, finanza e M&A",
+    title: "Co-Founder",
+    desc: "Consulenza strategica e finanza",
     photo: "/team/luca-bazzanella.png"
   },
   {
     name: "Francesco Mariotti",
     role: "Co-Founder",
-    title: "Ingegnere",
-    desc: "Specializzato in operazioni immobiliari e valorizzazione di asset",
-    photo: "/team/francesco-mariotti.png"
+    title: "Co-Founder",
+    desc: "Immobiliare",
+    photo: "/team/francesco-mariotti.jpg"
   },
   {
     name: "Sintija Birgele",
     role: "Team",
-    title: "IT Expert and partner of European Management",
-    desc: "Competenze digitali, tecnologie per il real estate e partnership European Management",
+    title: "Ingegnera Informatico",
+    desc: "Software e digitale",
     photo: "/team/sintija-birgele.png"
-  }
+  },
+  {
+    name: "Paolo Decaminada",
+    role: "Team",
+    title: "Legal",
+    desc: "Tax e legal",
+    photo: "/team/decaminada_2.jpg"
+  },
 ];
 
 const ChiSiamo = () => {
@@ -53,61 +46,57 @@ const ChiSiamo = () => {
         <PageHero imageUrl={HERO_IMAGES.chiSiamo}>
           <div className="max-w-4xl">
             <p className="font-display text-amber-200 text-xs sm:text-sm font-medium tracking-[0.3em] mb-4 sm:mb-6">CHI SIAMO</p>
-            <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-medium text-white leading-[1.1] mb-6 sm:mb-8 drop-shadow-sm px-4">
+            <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-medium text-white leading-[1.1] mb-6 sm:mb-8 drop-shadow-sm px-4">
               Un'agenzia immobiliare di nuova generazione
             </h1>
-            <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-white/90 leading-relaxed max-w-3xl drop-shadow-sm px-4">
+            <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-white/90 leading-relaxed max-w-3xl drop-shadow-sm font-light px-4">
               Triveneta Immobiliare – Premium Real Estate unisce affiancamento qualificato e tecnologie digitali avanzate.
             </p>
           </div>
         </PageHero>
 
         {/* Main Description */}
-        <section className="py-12 sm:py-16 md:py-20 bg-card/30">
+        <section className="pt-12 sm:pb-8 bg-card/30">
           <div className="container mx-auto px-4 sm:px-6">
-            <div className="grid lg:grid-cols-2 gap-8 sm:gap-12 md:gap-16 items-center">
-              <div>
-                <p className="text-base sm:text-lg text-muted-foreground leading-relaxed mb-4 sm:mb-6">
-                  Grazie a un sistema proprietario basato su Big Data forniamo valutazioni rapide, precise e aggiornate, supportiamo la ricerca di immobili anche in location esclusive e affianchiamo investitori partendo da obiettivi di rendimento e pianificazione strategica.
-                </p>
-                <p className="text-base sm:text-lg text-muted-foreground leading-relaxed mb-6 sm:mb-8">
-                  Operiamo con partner specializzati per offrire ai nostri clienti un servizio completo, sicuro e chiavi in mano.
-                </p>
-                <Link 
-                  to="/servizi"
-                  className="inline-flex items-center gap-2 sm:gap-3 text-primary font-medium hover:gap-4 transition-all text-sm sm:text-base"
-                >
-                  Scopri i nostri servizi <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5" />
-                </Link>
-              </div>
-              <div className="grid grid-cols-2 gap-4 sm:gap-6">
-                {[
-                  { icon: Building2, title: "Big Data", desc: "Sistema proprietario per valutazioni precise" },
-                  { icon: Users, title: "Network", desc: "Rete di partner qualificati" },
-                  { icon: FileCheck, title: "Consulenza", desc: "Affiancamento strategico personalizzato" },
-                  { icon: Calculator, title: "Rendimento", desc: "Obiettivi di investimento mirati" },
-                ].map((item, i) => (
-                  <div key={i} className="p-4 sm:p-6 md:p-8 bg-card border border-border rounded-xl shadow-sm hover:border-primary/20 transition-colors">
-                    <item.icon className="w-8 h-8 sm:w-10 sm:h-10 text-primary mb-3 sm:mb-4" />
-                    <h3 className="font-serif text-base sm:text-lg md:text-xl font-medium text-foreground mb-1 sm:mb-2">{item.title}</h3>
-                    <p className="text-xs sm:text-sm text-muted-foreground">{item.desc}</p>
+            <div className="max-w-6xl mx-auto">
+              <div className="bg-card/40 rounded-2xl text-justify">
+                <div className="space-y-6">
+                  <p className="text-base sm:text-lg md:text-xl text-foreground/90 leading-relaxed font-regular">
+                    Triveneta Immobiliare – Premium Real Estate è un’agenzia immobiliare di nuova generazione che unisce competenze consulenziali, digitale e un vasto network relazionale. Questo permette l'accesso a opportunità di acquisto e investimento uniche e l'affiancamento di investitori partendo da obiettivi di rendimento.
+                  </p>
+
+                  <p className="text-base sm:text-lg md:text-xl text-foreground/90 leading-relaxed font-light">
+                    Operiamo con partner specializzati per offrire ai nostri clienti un servizio completo, sicuro e chiavi in mano.
+                  </p>
+
+                  <p className="text-base sm:text-lg md:text-xl text-foreground/90 leading-relaxed font-light">
+                    Chi entra nel nostro team cresce gradualmente su immobili di pregio, investimenti e operazioni complesse, costruendo relazioni solide con clienti e investitori. Cerchiamo consulenti immobiliari con esperienza o profili junior motivati a un percorso strutturato.
+                  </p>
+
+                  <div>
+                    <Link
+                      to="/servizi"
+                      className="inline-flex items-center gap-2 sm:gap-3 text-primary font-medium hover:gap-4 transition-all text-sm sm:text-base"
+                    >
+                      Scopri i nostri servizi <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5" />
+                    </Link>
                   </div>
-                ))}
+                </div>
               </div>
             </div>
           </div>
         </section>
 
         {/* Team Section */}
-        <section className="py-12 sm:py-16 md:py-20 lg:py-24 xl:py-32">
+        <section className="py-12 sm:py-16 md:py-0">
           <div className="container mx-auto px-4 sm:px-6">
             <div className="text-center mb-10 sm:mb-12 md:mb-16">
               <p className="font-display text-primary text-xs sm:text-sm font-medium tracking-[0.3em] mb-3 sm:mb-4">IL NOSTRO TEAM</p>
               <h2 className="font-serif text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-medium text-foreground mb-4 sm:mb-6">
                 Incontra il Nostro Team
               </h2>
-              <p className="text-sm sm:text-base text-muted-foreground max-w-2xl mx-auto px-4">
-                Professionisti con competenze complementari nel settore immobiliare, finanziario e digitale.
+              <p className="text-base sm:text-lg md:text-xl text-foreground/90 leading-relaxed font-light text-center">
+                Nasce dall'intuizione dei due soci fondatori
               </p>
             </div>
             
@@ -133,26 +122,7 @@ const ChiSiamo = () => {
           </div>
         </section>
 
-        {/* Partnerships */}
-        <section className="py-12 sm:py-16 md:py-20 bg-card">
-          <div className="container mx-auto px-4 sm:px-6">
-            <div className="text-center mb-10 sm:mb-12 md:mb-16">
-              <p className="font-display text-primary text-xs sm:text-sm font-medium tracking-[0.3em] mb-3 sm:mb-4">COLLABORAZIONI</p>
-              <h2 className="font-serif text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-medium text-foreground">
-                Partnership Strategiche
-              </h2>
-            </div>
-            
-            <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8 max-w-5xl mx-auto">
-              {partnerships.map((partner, i) => (
-                <div key={i} className="p-6 sm:p-8 bg-card border border-border rounded-xl shadow-sm text-center hover:border-primary/20 transition-colors">
-                  <h3 className="font-serif text-lg sm:text-xl font-medium text-foreground mb-2 sm:mb-3">{partner.name}</h3>
-                  <p className="text-sm sm:text-base text-muted-foreground">{partner.desc}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
+        {/* Partnerships section removed */}
 
         {/* CTA */}
         <section className="py-12 sm:py-16 md:py-20">
