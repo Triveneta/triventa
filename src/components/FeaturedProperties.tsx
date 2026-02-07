@@ -42,7 +42,7 @@ const properties: Property[] = [
 ];
 
 const PropertyCard = ({ property }: { property: Property }) => (
-  <Link to="/vendita" className="group block">
+  <Link to="/acquisto" className="group block">
     <div className="relative overflow-hidden mb-4 sm:mb-5 rounded-xl border border-border shadow-sm group-hover:shadow-md transition-shadow duration-300">
       <img
         src={property.image}
@@ -81,7 +81,7 @@ const FeaturedProperties = () => {
             </h2>
           </div>
           <Link
-            to="/vendita"
+            to="/acquisto"
             className="mt-4 sm:mt-6 md:mt-0 inline-flex items-center gap-2 text-primary text-xs sm:text-sm font-medium tracking-widest hover:gap-3 transition-all"
           >
             Vedi Tutti

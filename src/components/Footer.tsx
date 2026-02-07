@@ -30,10 +30,8 @@ const Footer = () => {
             <h4 className="font-serif text-lg font-medium text-foreground mb-6 tracking-tight">Servizi</h4>
             <ul className="space-y-3">
               <li><Link to="/acquisto" className="text-muted-foreground hover:text-primary transition-colors">Compra Casa</Link></li>
-              <li><Link to="/vendita" className="text-muted-foreground hover:text-primary transition-colors">Vendi Casa</Link></li>
               <li><Link to="/investimenti" className="text-muted-foreground hover:text-primary transition-colors">Investimenti</Link></li>
-              <li><Link to="/vendita" className="text-muted-foreground hover:text-primary transition-colors">Valutazione</Link></li>
-              <li><Link to="/" className="text-muted-foreground hover:text-primary transition-colors">Case Vacanza</Link></li>
+              <li><Link to="/#featured" className="text-muted-foreground hover:text-primary transition-colors">Case Vacanza</Link></li>
             </ul>
           </div>
 
@@ -41,11 +39,11 @@ const Footer = () => {
           <div>
             <h4 className="font-serif text-lg font-medium text-foreground mb-6 tracking-tight">Zone</h4>
             <ul className="space-y-3">
-              <li><Link to="/vendita" className="text-muted-foreground hover:text-primary transition-colors">Lago di Garda</Link></li>
-              <li><Link to="/vendita" className="text-muted-foreground hover:text-primary transition-colors">Verona</Link></li>
-              <li><Link to="/vendita" className="text-muted-foreground hover:text-primary transition-colors">Trentino</Link></li>
-              <li><Link to="/vendita" className="text-muted-foreground hover:text-primary transition-colors">Friuli V.G.</Link></li>
-              <li><Link to="/vendita" className="text-muted-foreground hover:text-primary transition-colors">Veneto</Link></li>
+              <li><Link to="/acquisto" className="text-muted-foreground hover:text-primary transition-colors">Lago di Garda</Link></li>
+              <li><Link to="/acquisto" className="text-muted-foreground hover:text-primary transition-colors">Verona</Link></li>
+              <li><Link to="/acquisto" className="text-muted-foreground hover:text-primary transition-colors">Trentino</Link></li>
+              <li><Link to="/acquisto" className="text-muted-foreground hover:text-primary transition-colors">Friuli V.G.</Link></li>
+              <li><Link to="/acquisto" className="text-muted-foreground hover:text-primary transition-colors">Veneto</Link></li>
             </ul>
           </div>
         </div>

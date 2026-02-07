@@ -17,38 +17,38 @@ import {
 const services = [
   {
     icon: BarChart3,
-    title: "Valutazione Immobiliare Avanzata",
-    desc: "Sistema proprietario basato su Big Data di mercato per valutazioni rapide, precise e aggiornate."
+    title: "Valutazione immobiliare avanzata",
+    desc: "Valutazione immobiliare avanzata tramite sistema proprietario basato su Big Data di mercato."
   },
   {
     icon: Search,
-    title: "Ricerca e Selezione Immobili",
-    desc: "Ricerca di immobili anche in location esclusive o off-market, con accesso a opportunità uniche."
+    title: "Ricerca e selezione di immobili",
+    desc: "Ricerca e selezione di immobili, anche in location esclusive o off-market."
   },
   {
     icon: TrendingUp,
-    title: "Strategie di Investimento",
-    desc: "Consulenza immobiliare orientata alla creazione di rendite e pianificazione strategica."
+    title: "Strategie di investimento",
+    desc: "Strategie di investimento immobiliare orientate alla creazione di rendite."
   },
   {
     icon: Banknote,
-    title: "Finanza Agevolata",
-    desc: "Accesso a contributi e agevolazioni per l'acquisto e la valorizzazione degli immobili."
+    title: "Finanza agevolata",
+    desc: "Finanza agevolata e contributi per l’acquisto e la valorizzazione degli immobili."
   },
   {
     icon: Calculator,
-    title: "Consulenza Fiscale",
-    desc: "Supporto fiscale completo, inclusa la fiscalità internazionale per investitori esteri."
+    title: "Consulenza e supporto fiscale",
+    desc: "Consulenza e supporto fiscale, inclusa la fiscalità internazionale."
   },
   {
     icon: FileText,
-    title: "Gestione Successioni",
-    desc: "Gestione di eredità immobiliari e relativi adempimenti burocratici."
+    title: "Gestione successioni e eredità",
+    desc: "Gestione di successioni ed eredità immobiliari e relativi adempimenti."
   },
   {
     icon: Wrench,
-    title: "Preventivi Ristrutturazione",
-    desc: "Preventivi rapidi e automatizzati tramite rete di aziende convenzionate e cloud digitale condiviso."
+    title: "Preventivi di ristrutturazione",
+    desc: "Preventivi di ristrutturazione rapidi e automatizzati tramite rete di aziende convenzionate e cloud digitale condiviso."
   }
 ];
 
@@ -56,15 +56,15 @@ const Servizi = () => {
   return (
     <div className="min-h-screen bg-background">
       <Header />
-      <main>
+      <main className="pt-24">
         <PageHero imageUrl={HERO_IMAGES.servizi}>
           <div className="max-w-4xl px-4">
             <p className="font-display text-amber-200 text-xs sm:text-sm font-medium tracking-[0.3em] mb-4 sm:mb-6">SERVIZI</p>
-            <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-medium text-white leading-[1.1] mb-6 sm:mb-8 drop-shadow-sm">
+            <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-medium text-white leading-[1.1] mb-6 sm:mb-8 drop-shadow-sm">
               Servizi immobiliari avanzati
             </h1>
-            <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-white/90 leading-relaxed max-w-3xl drop-shadow-sm">
-              Integriamo competenze specialistiche, tecnologia digitale e una rete di partner qualificati, garantendo un approccio strutturato e orientato al valore.
+            <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-white/90 leading-relaxed max-w-3xl drop-shadow-sm font-light">
+              Triveneta immobiliare offre servizi immobiliari avanzati che integrano competenze specialistiche, tecnologia digitale e una rete di partner qualificati, garantendo un approccio strutturato e orientato al valore.
             </p>
           </div>
         </PageHero>
@@ -85,51 +85,6 @@ const Servizi = () => {
                   <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">{service.desc}</p>
                 </div>
               ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Approach Section */}
-        <section className="py-12 sm:py-16 md:py-20 lg:py-24 xl:py-32">
-          <div className="container mx-auto px-4 sm:px-6">
-            <div className="grid lg:grid-cols-2 gap-8 sm:gap-12 md:gap-16 items-center">
-              <div>
-                <p className="font-display text-primary text-xs sm:text-sm font-medium tracking-[0.3em] mb-3 sm:mb-4">IL NOSTRO APPROCCIO</p>
-                <h2 className="font-serif text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-medium text-foreground mb-6 sm:mb-8 leading-tight">
-                  Un servizio completo, sicuro e chiavi in mano
-                </h2>
-                <p className="text-base sm:text-lg text-muted-foreground leading-relaxed mb-4 sm:mb-6">
-                  Operiamo con partner specializzati per offrire ai nostri clienti un'esperienza immobiliare senza pensieri. Dalla valutazione iniziale alla gestione fiscale, ci occupiamo di ogni aspetto.
-                </p>
-                <p className="text-base sm:text-lg text-muted-foreground leading-relaxed mb-6 sm:mb-8">
-                  Il nostro sistema proprietario basato su Big Data ci permette di fornire valutazioni precise e identificare le migliori opportunità di mercato.
-                </p>
-                <Link 
-                  to="/chi-siamo"
-                  className="inline-flex items-center gap-2 sm:gap-3 text-primary text-sm sm:text-base font-medium hover:gap-4 transition-all"
-                >
-                  Scopri chi siamo <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5" />
-                </Link>
-              </div>
-              <div className="bg-card border border-border rounded-xl shadow-sm p-8 sm:p-10 md:p-12">
-                <div className="space-y-6 sm:space-y-8">
-                  <div>
-                    <p className="font-serif text-4xl sm:text-5xl font-medium text-primary mb-2">01</p>
-                    <h3 className="font-serif text-lg sm:text-xl font-medium text-foreground mb-2">Analisi</h3>
-                    <p className="text-sm sm:text-base text-muted-foreground">Valutiamo le tue esigenze e obiettivi</p>
-                  </div>
-                  <div className="border-t border-border pt-6 sm:pt-8">
-                    <p className="font-serif text-4xl sm:text-5xl font-medium text-primary mb-2">02</p>
-                    <h3 className="font-serif text-lg sm:text-xl font-medium text-foreground mb-2">Strategia</h3>
-                    <p className="text-sm sm:text-base text-muted-foreground">Definiamo il percorso ottimale</p>
-                  </div>
-                  <div className="border-t border-border pt-6 sm:pt-8">
-                    <p className="font-serif text-4xl sm:text-5xl font-medium text-primary mb-2">03</p>
-                    <h3 className="font-serif text-lg sm:text-xl font-medium text-foreground mb-2">Esecuzione</h3>
-                    <p className="text-sm sm:text-base text-muted-foreground">Realizziamo insieme i tuoi obiettivi</p>
-                  </div>
-                </div>
-              </div>
             </div>
           </div>
         </section>

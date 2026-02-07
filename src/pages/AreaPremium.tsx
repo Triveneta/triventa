@@ -58,7 +58,7 @@ const AreaPremium = () => {
               <Crown className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 text-amber-200" />
             </div>
             <p className="font-display text-amber-200 text-xs sm:text-sm font-medium tracking-[0.3em] mb-4 sm:mb-6">AREA CLIENTI PREMIUM</p>
-            <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-medium text-white leading-[1.1] mb-6 sm:mb-8 drop-shadow-sm">
+            <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-medium text-white leading-[1.1] mb-6 sm:mb-8 drop-shadow-sm">
               Riservatezza, chiarezza e competenza
             </h1>
             <p className="text-base sm:text-lg md:text-xl text-white/90 leading-relaxed max-w-2xl mx-auto drop-shadow-sm">
@@ -68,7 +68,7 @@ const AreaPremium = () => {
         </PageHero>
 
         {/* Benefits */}
-        <section className="py-12 sm:py-16 md:py-20 bg-card/30">
+        <section className="pt-12 sm:pt-16 md:pt-20 bg-card/30">
           <div className="container mx-auto px-4 sm:px-6">
             <div className="text-center mb-8 sm:mb-10 md:mb-12">
               <p className="font-display text-primary text-[10px] sm:text-xs font-medium tracking-[0.3em] mb-3 sm:mb-4 px-4">COSA TROVANO QUI I NOSTRI INVESTITORI ISCRITTI?</p>

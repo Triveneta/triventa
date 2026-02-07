@@ -3,13 +3,6 @@ import { ArrowRight } from "lucide-react";
 
 const showcaseItems = [
   {
-    image: "/760x470xc.webp",
-    label: "VENDITA",
-    title: "Vendi con Triveneta",
-    subtitle: "Valorizza il tuo immobile con i nostri esperti",
-    href: "/vendita",
-  },
-  {
     image: "/2200xxs.webp",
     label: "ACQUISTO",
     title: "Trova la Tua Casa",
@@ -37,7 +30,7 @@ const LuxuryShowcase = () => {
             SCOPRI TRIVENETA
           </p>
           <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-medium text-foreground tracking-tight">
-            Vendita · Acquisto · Investimenti
+             Acquisto · Investimenti
           </h2>
         </div>
 

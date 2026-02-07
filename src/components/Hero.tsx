@@ -39,26 +39,20 @@ const Hero = () => {
             CERCA CASA
           </Link>
           <Link
-            to="/vendita"
-            className="font-display w-full sm:w-auto sm:min-w-[200px] py-4 px-8 text-center text-sm font-medium tracking-[0.2em] text-white border-b sm:border-b-0 sm:border-r border-white/30 hover:text-amber-200 transition-colors"
-          >
-            VENDI CASA
-          </Link>
-          <Link
             to="/investimenti"
             className="font-display w-full sm:w-auto sm:min-w-[200px] py-4 px-8 text-center text-sm font-medium tracking-[0.2em] text-white hover:text-amber-200 transition-colors"
           >
-            INVESTI IN IMMOBILI
+            Opportunità di Investimento
           </Link>
         </div>
 
         {/* CASE VACANZA - centered on mobile, slightly left on desktop */}
-        <Link
-          to="/"
+        <a
+          href="#immobili"
           className="font-display px-10 py-3 bg-white/10 backdrop-blur-sm border border-white/30 text-white text-sm font-medium tracking-[0.15em] hover:bg-white/20 hover:border-white/50 transition-all sm:-translate-x-8"
         >
           CASE VACANZA
-        </Link>
+        </a>
       </div>
     </section>
   );
