@@ -29,18 +29,18 @@ const Hero = () => {
       <div className="relative z-10 flex-1" />
 
       {/* Bottom CTAs - Centered menu with CASE VACANZA (explicit light for dark hero) */}
-      <div className="relative z-10 pb-8 px-6 flex flex-col items-center">
+      <div className="relative z-10 pb-4 sm:pb-8 px-4 sm:px-6 flex flex-col items-center">
         {/* Main 3 CTAs */}
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-0 mb-6">
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-0 mb-4 sm:mb-6">
           <Link
             to="/acquisto"
-            className="font-display w-full sm:w-auto sm:min-w-[200px] py-4 px-8 text-center text-sm font-medium tracking-[0.2em] text-white border-b sm:border-b-0 sm:border-r border-white/30 hover:text-amber-200 transition-colors"
+            className="font-display w-full sm:w-auto sm:min-w-[200px] py-3 sm:py-4 px-6 sm:px-8 text-center text-sm font-medium tracking-[0.2em] text-white border-b sm:border-b-0 sm:border-r border-white/30 hover:text-amber-200 transition-colors"
           >
             CERCA CASA
           </Link>
           <Link
             to="/investimenti"
-            className="font-display w-full sm:w-auto sm:min-w-[200px] py-4 px-8 text-center text-sm font-medium tracking-[0.2em] text-white hover:text-amber-200 transition-colors"
+            className="font-display w-full sm:w-auto sm:min-w-[200px] py-3 sm:py-4 px-6 sm:px-8 text-center text-sm font-medium tracking-[0.2em] text-white hover:text-amber-200 transition-colors"
           >
             Opportunità di Investimento
           </Link>
