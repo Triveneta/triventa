@@ -97,7 +97,7 @@ const AboutSection = () => {
                   Luca Bazzanella
                 </h4>
                 <p className="text-muted-foreground text-xs sm:text-sm md:text-base">
-                  Manager, consulenza strategica, finanza e M&A
+                  Consulenza strategica e finanza
                 </p>
               </div>
 
@@ -110,7 +110,7 @@ const AboutSection = () => {
                   Francesco Mariotti
                 </h4>
                 <p className="text-muted-foreground text-xs sm:text-sm md:text-base">
-                  CEO, Ingegnere specializzato in operazioni immobiliari
+                  Immobiliare
                 </p>
               </div>
 
@@ -123,7 +123,7 @@ const AboutSection = () => {
                   Sintija Birgele
                 </h4>
                 <p className="text-muted-foreground text-xs sm:text-sm md:text-base">
-                  IT Expert, partner of European Management
+                  Software e digitale
                 </p>
               </div>
             </div>

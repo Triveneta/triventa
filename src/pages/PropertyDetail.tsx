@@ -8,14 +8,49 @@ import PageHero from "@/components/PageHero";
 
 function Gallery({ images }: { images: string[] }) {
   const [index, setIndex] = React.useState(0);
+  const [paused, setPaused] = React.useState(false);
+  const intervalRef = React.useRef<number | null>(null);
+
   React.useEffect(() => setIndex(0), [images]);
+
+  // Auto-play when more than one image
+  React.useEffect(() => {
+    if (!images || images.length <= 1) return;
+    if (paused) return;
+
+    intervalRef.current = window.setInterval(() => {
+      setIndex((i) => (i + 1) % images.length);
+    }, 4000);
+
+    return () => {
+      if (intervalRef.current) window.clearInterval(intervalRef.current);
+      intervalRef.current = null;
+    };
+  }, [images, paused]);
 
   if (!images || images.length === 0) return null;
 
   return (
-    <div>
+    <div onMouseEnter={() => setPaused(true)} onMouseLeave={() => setPaused(false)}>
       <div className="relative w-full rounded-lg overflow-hidden bg-slate-100">
-        <img src={images[index]} alt={`photo-${index}`} className="w-full h-80 md:h-[520px] object-cover transition-transform duration-500" />
+        {/* stacked images for smooth crossfade + blur transition */}
+        <div className="relative w-full h-80 md:h-[520px]">
+          {images.map((src, i) => {
+            const isActive = i === index;
+            return (
+              <img
+                key={src + i}
+                src={src}
+                alt={`photo-${i}`}
+                className={`absolute inset-0 w-full h-full object-cover transition-all duration-700 ease-out transform-gpu ${
+                  isActive ? "opacity-100 blur-0 scale-100" : "opacity-0 blur-sm scale-101"
+                }`}
+                style={{ zIndex: isActive ? 2 : 1 }}
+              />
+            );
+          })}
+        </div>
+
         {images.length > 1 && (
           <>
             <button
@@ -27,7 +62,14 @@ function Gallery({ images }: { images: string[] }) {
             </button>
             <button
               aria-label="next"
-              onClick={() => setIndex((i) => (i + 1) % images.length)}
+              onClick={() => {
+                setIndex((i) => (i + 1) % images.length);
+                // reset autoplay timer
+                if (intervalRef.current) {
+                  window.clearInterval(intervalRef.current);
+                  intervalRef.current = null;
+                }
+              }}
               className="absolute right-3 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white p-2 rounded-full shadow"
             >
               <ChevronRight size={20} />
