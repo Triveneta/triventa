@@ -36,7 +36,7 @@ const Header = () => {
 
   return (
     <header className={`fixed top-0 left-0 right-0 z-50 ${bgClass} backdrop-blur-sm transition-colors duration-300`}>
-      <div className="container mx-auto px-6 py-4">
+      <div className="container mx-auto px-4 py-2 sm:py-4">
         <div className="flex items-center justify-between">
           {/* Logo: dark version only at top of landing (hero); light version for all pages and landing below hero */}
           <Link to="/" className="flex items-center">
@@ -73,17 +73,17 @@ const Header = () => {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className={`lg:hidden p-2 ${headerLight ? "text-foreground" : "text-white"}`}
+            className={`lg:hidden p-1.5 ${headerLight ? "text-foreground" : "text-white"}`}
             aria-label="Menu"
           >
-            {isOpen ? <X size={24} /> : <Menu size={24} />}
+            {isOpen ? <X size={20} /> : <Menu size={20} />}
           </button>
         </div>
 
         {/* Mobile Navigation */}
         {isOpen && (
-          <nav className={`lg:hidden mt-4 pb-4 border-t ${borderClass} pt-4`}>
-            <div className="flex flex-col gap-4">
+          <nav className={`lg:hidden mt-3 pb-3 border-t ${borderClass} pt-3`}>
+            <div className="flex flex-col gap-3">
               {navLinks.map((link) => (
                 <Link
                   key={link.name}
@@ -96,7 +96,7 @@ const Header = () => {
               ))}
               <Link
                 to="/area-premium"
-                  className={`font-display px-6 py-2.5 border text-xs font-medium tracking-[0.08em] text-center transition-all ${
+                  className={`font-display px-4 py-2 border text-xs font-medium tracking-[0.08em] text-center transition-all ${
                   headerLight 
                     ? "border-primary text-primary hover:bg-primary hover:text-primary-foreground" 
                     : "border-white/40 text-white hover:bg-white/10"
