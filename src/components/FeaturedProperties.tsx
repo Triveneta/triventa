@@ -77,7 +77,7 @@ const FeaturedProperties = () => {
           <div>
             <p className="font-display text-primary text-xs font-medium tracking-[0.35em] mb-3 sm:mb-4">IMMOBILI IN EVIDENZA</p>
             <h2 className="font-serif text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-medium text-foreground tracking-tight">
-              Proprietà Selezionate
+              Proprietà in evidenza
             </h2>
           </div>
           <Link

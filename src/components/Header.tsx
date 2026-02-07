@@ -43,7 +43,7 @@ const Header = () => {
             <img 
               src={headerLight ? "/logo.png" : "/logo-dark.png"} 
               alt="Triveneta Immobiliare - Premium Real Estate" 
-              className={`w-auto transition-all duration-300 ${headerLight ? "h-12 md:h-14" : "h-16 md:h-20 lg:h-24"}`}
+              className={`w-auto transition-all duration-300 ${headerLight ? "h-14 md:h-16" : "h-16 md:h-18 lg:h-20"}`}
             />
           </Link>
 
@@ -53,14 +53,14 @@ const Header = () => {
               <Link
                 key={link.name}
                 to={link.href}
-                className={`font-display text-sm font-medium tracking-[0.15em] ${textClass} transition-colors duration-300`}
+                className={`font-display text-xs font-medium tracking-[0.12em] ${textClass} transition-colors duration-300`}
               >
                 {link.name}
               </Link>
             ))}
             <Link
               to="/area-premium"
-              className={`font-display px-6 py-2.5 border text-sm font-medium tracking-[0.1em] transition-all duration-300 ${
+              className={`font-display px-6 py-2.5 border text-xs font-medium tracking-[0.08em] transition-all duration-300 ${
                 headerLight 
                   ? "border-primary text-primary hover:bg-primary hover:text-primary-foreground" 
                   : "border-white/40 text-white hover:bg-white/10 hover:border-white/60"
@@ -88,7 +88,7 @@ const Header = () => {
                 <Link
                   key={link.name}
                   to={link.href}
-                  className={`font-display text-sm font-medium tracking-[0.15em] ${textClass} transition-colors`}
+                  className={`font-display text-xs font-medium tracking-[0.12em] ${textClass} transition-colors`}
                   onClick={() => setIsOpen(false)}
                 >
                   {link.name}
@@ -96,7 +96,7 @@ const Header = () => {
               ))}
               <Link
                 to="/area-premium"
-                className={`font-display px-6 py-2.5 border text-sm font-medium tracking-[0.1em] text-center transition-all ${
+                  className={`font-display px-6 py-2.5 border text-xs font-medium tracking-[0.08em] text-center transition-all ${
                   headerLight 
                     ? "border-primary text-primary hover:bg-primary hover:text-primary-foreground" 
                     : "border-white/40 text-white hover:bg-white/10"
