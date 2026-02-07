@@ -45,14 +45,6 @@ const Hero = () => {
             Opportunità di Investimento
           </Link>
         </div>
-
-        {/* CASE VACANZA - centered on mobile, slightly left on desktop */}
-        <a
-          href="#immobili"
-          className="font-display px-10 py-3 bg-white/10 backdrop-blur-sm border border-white/30 text-white text-sm font-medium tracking-[0.15em] hover:bg-white/20 hover:border-white/50 transition-all sm:-translate-x-8"
-        >
-          CASE VACANZA
-        </a>
       </div>
     </section>
   );
