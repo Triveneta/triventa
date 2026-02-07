@@ -4,10 +4,12 @@ import PageHero from "@/components/PageHero";
 import { HERO_IMAGES } from "@/lib/hero-images";
 import { ArrowRight, Search, Home, MapPin } from "lucide-react";
 import { useState, useMemo } from "react";
+import { Link } from "react-router-dom";
 import { properties } from "@/lib/properties";
 
 const Acquisto = () => {
   const [searchQuery, setSearchQuery] = useState("");
+
 
   return (
     <div className="min-h-screen bg-background">
@@ -41,6 +43,8 @@ const Acquisto = () => {
             </div>
           </div>
 
+          {/* Selected Property Detail is now a dedicated page at /acquisto/:id */}
+
           {/* Search Results */}
           <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8">
             {useMemo(() => {
@@ -52,7 +56,7 @@ const Acquisto = () => {
                 : properties;
 
               return filtered.map((property) => (
-                <a key={property.id} href={`/accquisto#property-${property.id}`} className="group block">
+                <Link key={property.id} to={`/acquisto/${property.id}`} className="group block">
                   <div className="relative overflow-hidden mb-3 sm:mb-4 rounded-xl border border-border shadow-sm group-hover:shadow-md transition-shadow">
                     <img src={property.image} alt={property.title} className="w-full h-48 sm:h-56 md:h-64 object-cover transition-transform duration-700 group-hover:scale-105" />
                   </div>
@@ -63,7 +67,7 @@ const Acquisto = () => {
                   <h3 className="font-serif text-lg sm:text-xl font-medium text-foreground mb-1 sm:mb-2 group-hover:text-primary transition-colors">{property.title}</h3>
                   <p className="text-xs sm:text-sm text-muted-foreground mb-1 sm:mb-2">{property.specs}</p>
                   <p className="text-xs sm:text-sm text-primary font-semibold">{property.price}</p>
-                </a>
+                </Link>
               ));
             }, [searchQuery])}
           </div>
