@@ -19,14 +19,14 @@ const team = [
     role: "Co-Founder",
     title: "Co-Founder",
     desc: "Immobiliare",
-    photo: "/team/francesco-mariotti.jpg"
+    photo: "/team/francesco_portrait.jpg"
   },
   {
     name: "Sintija Birgele",
     role: "Team",
     title: "Ingegnera Informatico",
     desc: "Software e digitale",
-    photo: "/team/sintija-birgele.png"
+    photo: "/team/sintija-birgele.jpg"
   },
   {
     name: "Paolo Decaminada",

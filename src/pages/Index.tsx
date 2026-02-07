@@ -17,9 +17,9 @@ const Index = () => {
         <AboutSection />
       </Reveal>
 
-      <Reveal delay={220}>
+      {/* <Reveal delay={220}>
         <FeaturedProperties />
-      </Reveal>
+      </Reveal> */}
       <Footer />
     </div>
   );
