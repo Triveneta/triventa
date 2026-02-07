@@ -104,7 +104,7 @@ const AboutSection = () => {
               {/* Francesco Mariotti */}
               <div className="text-center">
                 <div className="w-40 h-40 sm:w-48 sm:h-48 md:w-56 md:h-56 lg:w-64 lg:h-64 xl:w-72 xl:h-72 mx-auto mb-4 sm:mb-6 md:mb-8 rounded-full overflow-hidden border-2 border-primary/20 shadow-lg">
-                  <img src="/team/francesco-mariotti.jpg" alt="Francesco Mariotti" className="w-full h-full object-cover object-top" />
+                  <img src="/team/francesco_portrait.jpg" alt="Francesco Mariotti" className="w-full h-full object-cover object-top" />
                 </div>
                 <h4 className="font-serif text-base sm:text-lg md:text-xl lg:text-2xl font-medium text-foreground mb-1 sm:mb-2">
                   Francesco Mariotti
@@ -117,7 +117,7 @@ const AboutSection = () => {
               {/* Sintija Birgele */}
               <div className="text-center md:col-span-1">
                 <div className="w-40 h-40 sm:w-48 sm:h-48 md:w-56 md:h-56 lg:w-64 lg:h-64 xl:w-72 xl:h-72 mx-auto mb-4 sm:mb-6 md:mb-8 rounded-full overflow-hidden border-2 border-primary/20 shadow-lg">
-                  <img src="/team/sintija-birgele.png" alt="Sintija Birgele" className="w-full h-full object-cover object-top" />
+                  <img src="/team/sintija-birgele.jpg" alt="Sintija Birgele" className="w-full h-full object-cover object-top" />
                 </div>
                 <h4 className="font-serif text-base sm:text-lg md:text-xl lg:text-2xl font-medium text-foreground mb-1 sm:mb-2">
                   Sintija Birgele

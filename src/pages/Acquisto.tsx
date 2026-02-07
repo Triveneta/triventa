@@ -28,18 +28,18 @@ const Acquisto = () => {
           <div className="bg-card border border-border rounded-xl shadow-sm p-4 sm:p-6 mb-8 sm:mb-10 md:mb-12 mt-3">
             <div className="flex flex-col md:flex-row gap-3 sm:gap-4">
               <div className="flex-1 relative">
-                <Search className="absolute left-3 sm:left-4 top-1/2 -translate-y-1/2 w-4 h-4 sm:w-5 sm:h-5 text-muted-foreground" />
+                {/* left icon for desktop, right icon for mobile */}
+                <Search className="hidden sm:block absolute left-3 sm:left-4 top-1/2 -translate-y-1/2 w-4 h-4 sm:w-5 sm:h-5 text-border" />
+                <Search className="block sm:hidden absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-border" />
                 <input
                   type="text"
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
                   placeholder="Cerca per zona, città o tipo di immobile..."
-                  className="w-full pl-10 sm:pl-12 pr-3 sm:pr-4 py-2 sm:py-3 text-sm sm:text-base bg-background border border-border text-foreground placeholder:text-muted-foreground focus:border-primary focus:outline-none"
+                  className="w-full pl-10 sm:pl-12 pr-4 py-2 sm:py-3 text-sm sm:text-base bg-background border border-border text-foreground placeholder:text-muted-foreground focus:border-primary focus:outline-none"
                 />
               </div>
-              <button className="font-display px-6 sm:px-8 py-2.5 sm:py-3 rounded-lg bg-primary text-primary-foreground text-xs sm:text-sm font-medium tracking-wider hover:bg-primary/90 transition-colors shadow-sm">
-                CERCA
-              </button>
+              {/* Search is live as you type; no submit button needed */}
             </div>
           </div>
 
