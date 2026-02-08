@@ -309,8 +309,8 @@ export default function CercaCasaInline({ initial = 'search', onClose }: { initi
   };
 
   return (
-    <div className="absolute left-0 right-0 bottom-0 z-30 mx-auto w-full max-w-4xl px-4 py-6">
-      <div className="rounded-2xl border border-white/15 bg-white/10 backdrop-blur-xl p-5 shadow-[0_24px_80px_rgba(0,0,0,0.45)] text-white">
+    <div className="fixed inset-0 z-50 flex items-end justify-center bg-slate-950/40 px-4 py-6 backdrop-blur-sm sm:absolute sm:inset-auto sm:left-0 sm:right-0 sm:bottom-0 sm:bg-transparent sm:backdrop-blur-none">
+      <div className="w-full max-w-4xl max-h-[85vh] overflow-y-auto rounded-2xl border border-white/15 bg-white/10 backdrop-blur-xl p-5 shadow-[0_24px_80px_rgba(0,0,0,0.45)] text-white sm:max-h-none">
         <div className="relative mb-4">
           <div className="text-center">
             <p className="text-xs uppercase tracking-[0.3em] text-white/70">Richiesta</p>
