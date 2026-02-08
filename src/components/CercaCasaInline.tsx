@@ -393,7 +393,7 @@ export default function CercaCasaInline({ initial = 'search', onClose }: { initi
                     <PropertySelect value={searchForm.tipologia} onChange={(value) => setSearchForm((s) => ({ ...s, tipologia: value }))} />
                   </div>
                   <div>
-                    <label className="text-xs text-white/70">Zona (inserisci preferenze)</label>
+                    <label className="text-xs text-white/70">Zona inserisci</label>
                     <input value={searchForm.zona} onChange={(e) => setSearchForm((s) => ({ ...s, zona: e.target.value }))} className="w-full rounded-lg border border-white/20 bg-white/5 p-2.5 mt-1 text-sm text-white placeholder-white/60 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-white/40" />
                   </div>
                 </div>
@@ -693,7 +693,7 @@ export default function CercaCasaInline({ initial = 'search', onClose }: { initi
                     <PropertySelect value={valueForm.tipologia} onChange={(value) => setValueForm((s) => ({ ...s, tipologia: value }))} />
                   </div>
                   <div>
-                    <label className="text-xs text-white/70">Zona (inserisci preferenze)</label>
+                    <label className="text-xs text-white/70">Zona inserisci</label>
                     <input value={valueForm.zona} onChange={(e) => setValueForm((s) => ({ ...s, zona: e.target.value }))} className="w-full rounded-lg border border-white/20 bg-white/5 p-2.5 mt-1 text-sm text-white placeholder-white/60 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-white/40" />
                   </div>
                 </div>
