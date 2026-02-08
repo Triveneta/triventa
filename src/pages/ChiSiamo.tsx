@@ -18,7 +18,7 @@ const team = [
     name: "Francesco Mariotti",
     role: "Co-Founder",
     title: "Co-Founder",
-    desc: "Immobiliare",
+    desc: "Immobiliare e Ingegnere",
     photo: "/team/francesco_portrait.jpg"
   },
   {

@@ -1,7 +1,12 @@
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import heroImage from "@/assets/hero-triveneto.jpg";
+import CercaCasaInline from "./CercaCasaInline";
 
 const Hero = () => {
+  const [showInline, setShowInline] = useState(false);
+  const [initialTab, setInitialTab] = useState<'search' | 'value'>('search');
+
   return (
     <section className="relative h-screen flex flex-col">
       {/* Background Image - Full visibility */}
@@ -30,14 +35,26 @@ const Hero = () => {
 
       {/* Bottom CTAs - Centered menu with CASE VACANZA (explicit light for dark hero) */}
       <div className="relative z-10 pb-4 sm:pb-8 px-4 sm:px-6 flex flex-col items-center">
-        {/* Main 3 CTAs */}
+        {/* Main CTAs */}
         <div className="flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-0 mb-4 sm:mb-6">
-          <Link
-            to="/acquisto"
+          <button
+            onClick={() => {
+              setShowInline(true);
+              setInitialTab('search');
+            }}
             className="font-display w-full sm:w-auto sm:min-w-[200px] py-3 sm:py-4 px-6 sm:px-8 text-center text-sm font-medium tracking-[0.2em] text-white border-b sm:border-b-0 sm:border-r border-white/30 hover:text-amber-200 transition-colors"
           >
             CERCA CASA
-          </Link>
+          </button>
+          <button
+            onClick={() => {
+              setShowInline(true);
+              setInitialTab('value');
+            }}
+            className="font-display w-full sm:w-auto sm:min-w-[200px] py-3 sm:py-4 px-6 sm:px-8 text-center text-sm font-medium tracking-[0.2em] text-white hover:text-amber-200 transition-colors"
+          >
+            VALUTA CASA
+          </button>
           <Link
             to="/investimenti"
             className="font-display w-full sm:w-auto sm:min-w-[200px] py-3 sm:py-4 px-6 sm:px-8 text-center text-sm font-medium tracking-[0.2em] text-white hover:text-amber-200 transition-colors"
@@ -46,6 +63,8 @@ const Hero = () => {
           </Link>
         </div>
       </div>
+
+      {showInline && <CercaCasaInline initial={initialTab} onClose={() => setShowInline(false)} />}
     </section>
   );
 };

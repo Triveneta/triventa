@@ -110,7 +110,7 @@ const AboutSection = () => {
                   Francesco Mariotti
                 </h4>
                 <p className="text-muted-foreground text-xs sm:text-sm md:text-base">
-                  Immobiliare
+                  Immobiliare e Ingegnere
                 </p>
               </div>
 
