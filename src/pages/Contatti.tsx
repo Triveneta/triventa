@@ -9,6 +9,7 @@ import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
+import { v4 as uuidv4 } from "uuid";
 
 const contactInfo = [
   {
@@ -37,8 +38,12 @@ const contactInfo = [
   }
 ];
 
+const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxEYUIiVQl5x2CvK9dPW-uMThvu8KQVmtkLsJn8hpENv4UorV-dtesLtccgqCO5RT8e/exec";
+
 const Contatti = () => {
   const { toast } = useToast();
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitted, setSubmitted] = useState(false);
   const [formData, setFormData] = useState({
     nome: "",
     email: "",
@@ -47,13 +52,60 @@ const Contatti = () => {
     messaggio: ""
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    toast({
-      title: "Messaggio inviato",
-      description: "Ti risponderemo al più presto.",
+  const [sessionId] = useState<string>(() => uuidv4());
+
+  const sendContactData = async (data: Record<string, string>) => {
+    const now = new Date();
+    const pad = (n: number) => (n < 10 ? "0" + n : n);
+    const date = `${pad(now.getDate())}-${pad(now.getMonth() + 1)}-${now.getFullYear()} ${pad(now.getHours())}:${pad(now.getMinutes())}`;
+    const payload: Record<string, string | number> = {
+      formType: "scrivici_messaggio",
+      sessionId,
+      date,
+      step: 1,
+      ...data,
+    };
+
+    const params = Object.keys(payload)
+      .map((k) => `${encodeURIComponent(k)}=${encodeURIComponent(payload[k])}`)
+      .join("&");
+
+    return new Promise<void>((resolve, reject) => {
+      const xhr = new XMLHttpRequest();
+      xhr.open("POST", SCRIPT_URL);
+      xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+      xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4) {
+          if (xhr.status === 200) resolve();
+          else reject(new Error("Errore invio"));
+        }
+      };
+      xhr.send(params);
     });
-    setFormData({ nome: "", email: "", telefono: "", oggetto: "", messaggio: "" });
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    try {
+      await sendContactData({
+        nome: formData.nome,
+        email: formData.email,
+        telefono: formData.telefono,
+        oggetto: formData.oggetto,
+        messaggio: formData.messaggio,
+      });
+      setSubmitted(true);
+      setFormData({ nome: "", email: "", telefono: "", oggetto: "", messaggio: "" });
+    } catch (error) {
+      toast({
+        title: "Errore invio",
+        description: "Impossibile inviare il messaggio. Riprova più tardi.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -116,6 +168,11 @@ const Contatti = () => {
               <div className="bg-card border border-border rounded-xl shadow-sm p-6 sm:p-8 md:p-10">
                 <h3 className="font-serif text-xl sm:text-2xl font-medium text-foreground mb-4 sm:mb-6">Scrivici un Messaggio</h3>
                 <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6">
+                  {submitted && (
+                    <div className="rounded-lg border border-primary/20 bg-primary/5 p-4 text-sm text-foreground">
+                      Dettagli inviati con successo. Ti contatteremo presto.
+                    </div>
+                  )}
                   <div className="space-y-2">
                     <Label htmlFor="nome" className="text-xs sm:text-sm">Nome e Cognome</Label>
                     <Input 
@@ -172,8 +229,8 @@ const Contatti = () => {
                       required
                     />
                   </div>
-                  <Button type="submit" className="w-full py-4 sm:py-5 md:py-6 text-sm sm:text-base tracking-wider rounded-lg shadow-sm">
-                    INVIA MESSAGGIO
+                  <Button type="submit" disabled={isSubmitting} className="w-full py-4 sm:py-5 md:py-6 text-sm sm:text-base tracking-wider rounded-lg shadow-sm">
+                    {isSubmitting ? "INVIO..." : "INVIA MESSAGGIO"}
                   </Button>
                 </form>
               </div>

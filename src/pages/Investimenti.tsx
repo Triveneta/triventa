@@ -12,6 +12,9 @@ import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Checkbox } from "@/components/ui/checkbox";
 import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
+import { v4 as uuidv4 } from "uuid";
+
+const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxEYUIiVQl5x2CvK9dPW-uMThvu8KQVmtkLsJn8hpENv4UorV-dtesLtccgqCO5RT8e/exec";
 
 const clientTypes = [
   { id: "privato", label: "Privato", desc: "Investitore individuale" },
@@ -60,6 +63,8 @@ const targetClients = [
 
 const Investimenti = () => {
   const { toast } = useToast();
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitted, setSubmitted] = useState(false);
   const [formData, setFormData] = useState({
     nome: "",
     email: "",
@@ -74,6 +79,38 @@ const Investimenti = () => {
     note: ""
   });
 
+  const [sessionId] = useState<string>(() => uuidv4());
+
+  const sendConsultingData = async (data: Record<string, string>) => {
+    const now = new Date();
+    const pad = (n: number) => (n < 10 ? "0" + n : n);
+    const date = `${pad(now.getDate())}-${pad(now.getMonth() + 1)}-${now.getFullYear()} ${pad(now.getHours())}:${pad(now.getMinutes())}`;
+    const payload: Record<string, string | number> = {
+      formType: "richiedi_consulenza",
+      sessionId,
+      date,
+      step: 1,
+      ...data,
+    };
+
+    const params = Object.keys(payload)
+      .map((k) => `${encodeURIComponent(k)}=${encodeURIComponent(payload[k])}`)
+      .join("&");
+
+    return new Promise<void>((resolve, reject) => {
+      const xhr = new XMLHttpRequest();
+      xhr.open("POST", SCRIPT_URL);
+      xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+      xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4) {
+          if (xhr.status === 200) resolve();
+          else reject(new Error("Errore invio"));
+        }
+      };
+      xhr.send(params);
+    });
+  };
+
   const handleAssetChange = (assetId: string, checked: boolean) => {
     if (checked) {
       setFormData({ ...formData, asset: [...formData.asset, assetId] });
@@ -82,12 +119,46 @@ const Investimenti = () => {
     }
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    toast({
-      title: "Richiesta inviata",
-      description: "Ti contatteremo al più presto per discutere le opportunità di investimento.",
-    });
+    setIsSubmitting(true);
+    try {
+      await sendConsultingData({
+        nome: formData.nome,
+        email: formData.email,
+        telefono: formData.telefono,
+        indirizzo: formData.indirizzo,
+        tipoCliente: formData.tipoCliente,
+        redditivita: formData.redditivita,
+        budget: formData.budget,
+        operazione: formData.operazione,
+        asset: formData.asset.join(", "),
+        coinvolgimento: formData.coinvolgimento,
+        note: formData.note,
+      });
+      setSubmitted(true);
+      setFormData({
+        nome: "",
+        email: "",
+        telefono: "",
+        indirizzo: "",
+        tipoCliente: "",
+        redditivita: "",
+        budget: "",
+        operazione: "",
+        asset: [],
+        coinvolgimento: "",
+        note: "",
+      });
+    } catch (error) {
+      toast({
+        title: "Errore invio",
+        description: "Impossibile inviare la richiesta. Riprova più tardi.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -145,6 +216,11 @@ const Investimenti = () => {
               </div>
               
               <form onSubmit={handleSubmit} className="bg-card border border-border rounded-xl shadow-sm p-4 sm:p-6 md:p-8 lg:p-10 space-y-6 sm:space-y-8 md:space-y-10">
+                {submitted && (
+                  <div className="rounded-lg border border-primary/20 bg-primary/5 p-4 text-sm text-foreground">
+                    Dettagli inviati con successo. Ti contatteremo presto.
+                  </div>
+                )}
                 {/* Contact Info */}
                 <div>
                   <h3 className="font-serif text-lg sm:text-xl font-medium text-foreground mb-4 sm:mb-6">Dati di Contatto</h3>
@@ -320,8 +396,8 @@ const Investimenti = () => {
                   />
                 </div>
 
-                <Button type="submit" className="w-full py-4 sm:py-5 md:py-6 text-sm sm:text-base tracking-wider rounded-lg shadow-sm">
-                  INVIA RICHIESTA
+                <Button type="submit" disabled={isSubmitting} className="w-full py-4 sm:py-5 md:py-6 text-sm sm:text-base tracking-wider rounded-lg shadow-sm">
+                  {isSubmitting ? "INVIO..." : "INVIA RICHIESTA"}
                 </Button>
               </form>
             </div>
