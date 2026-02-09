@@ -6,34 +6,36 @@ import { HERO_IMAGES } from "@/lib/hero-images";
 import { Users, Building2, FileCheck, Calculator, ArrowRight } from "lucide-react";
 // Removed partnerships array
 
+const baseUrl = import.meta.env.BASE_URL;
+
 const team = [
   {
     name: "Luca Bazzanella",
     role: "Co-Founder",
     title: "Co-Founder",
     desc: "Consulenza strategica e finanza",
-    photo: "/team/luca-bazzanella.png"
+    photo: `${baseUrl}team/luca-bazzanella.png`
   },
   {
     name: "Francesco Mariotti",
     role: "Co-Founder",
     title: "Co-Founder",
     desc: "Immobiliare e Ingegnere",
-    photo: "/team/francesco_portrait.jpg"
+    photo: `${baseUrl}team/francesco_portrait.jpg`
   },
   {
     name: "Sintija Birgele",
     role: "Team",
     title: "Ingegnera Informatico",
     desc: "Software e digitale",
-    photo: "/team/sintija-birgele.jpg"
+    photo: `${baseUrl}team/sintija-birgele.jpg`
   },
   {
     name: "Paolo Decaminada",
     role: "Team",
     title: "Legal",
     desc: "Tax e legal",
-    photo: "/team/decaminada_2.jpg"
+    photo: `${baseUrl}team/decaminada_2.jpg`
   },
 ];
 

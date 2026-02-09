@@ -1,16 +1,18 @@
 import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 
+const baseUrl = import.meta.env.BASE_URL;
+
 const showcaseItems = [
   {
-    image: "/2200xxs.webp",
+    image: `${baseUrl}2200xxs.webp`,
     label: "ACQUISTO",
     title: "Trova la Tua Casa",
     subtitle: "Proprietà selezionate in tutto il Triveneto",
     href: "/acquisto",
   },
   {
-    image: "/2200xxss.webp",
+    image: `${baseUrl}2200xxss.webp`,
     label: "INVESTIMENTI",
     title: "Investi in Immobili",
     subtitle: "Opportunità esclusive per investitori",

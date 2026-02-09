@@ -3,6 +3,7 @@ import { Menu, X } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
 
 const HERO_HEIGHT_THRESHOLD = 0.85; // switch to light header when past ~85% of viewport height
+const baseUrl = import.meta.env.BASE_URL;
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -41,7 +42,7 @@ const Header = () => {
           {/* Logo: dark version only at top of landing (hero); light version for all pages and landing below hero */}
           <Link to="/" className="flex items-center">
             <img 
-              src={headerLight ? "/logo.png" : "/logo-dark.png"} 
+              src={headerLight ? `${baseUrl}logo.png` : `${baseUrl}logo-dark.png`} 
               alt="Triveneta Immobiliare - Premium Real Estate" 
               className={`w-auto transition-all duration-300 ${headerLight ? "h-14 md:h-16" : "h-16 md:h-18 lg:h-20"}`}
             />

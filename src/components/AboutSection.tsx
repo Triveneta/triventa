@@ -1,5 +1,7 @@
 import { Link } from "react-router-dom";
 
+const baseUrl = import.meta.env.BASE_URL;
+
 const AboutSection = () => {
   return (
     <section className="bg-background py-16 sm:py-20">
@@ -22,7 +24,7 @@ const AboutSection = () => {
           {/* Chi Siamo Card */}
           <div className="group relative overflow-hidden rounded-xl shadow-lg min-h-[320px] sm:min-h-[380px] md:min-h-[420px] lg:min-h-[480px] xl:min-h-[560px]">
             <img
-              src="/760x470xc.webp"
+              src={`${baseUrl}760x470xc.webp`}
               alt="Chi siamo - Il nostro team"
               className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
             />
@@ -47,7 +49,7 @@ const AboutSection = () => {
           {/* Servizi Card */}
           <Link to="/servizi" className="group relative overflow-hidden rounded-xl shadow-lg min-h-[320px] sm:min-h-[380px] md:min-h-[420px] lg:min-h-[480px] xl:min-h-[560px]">
             <img
-              src="/2200xxs.webp"
+              src={`${baseUrl}2200xxs.webp`}
               alt="I nostri servizi"
               className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
             />
@@ -91,7 +93,7 @@ const AboutSection = () => {
               {/* Luca Bazzanella */}
               <div className="text-center">
                   <div className="w-40 h-40 sm:w-48 sm:h-48 md:w-56 md:h-56 lg:w-64 lg:h-64 xl:w-72 xl:h-72 mx-auto mb-4 sm:mb-6 md:mb-8 rounded-full overflow-hidden border-2 border-primary/20 shadow-lg">
-                  <img src="/team/luca-bazzanella.png" alt="Luca Bazzanella" className="w-full h-full object-cover object-top" />
+                  <img src={`${baseUrl}team/luca-bazzanella.png`} alt="Luca Bazzanella" className="w-full h-full object-cover object-top" />
                 </div>
                 <h4 className="font-serif text-base sm:text-lg md:text-xl lg:text-2xl font-medium text-foreground mb-1 sm:mb-2">
                   Luca Bazzanella
@@ -104,7 +106,7 @@ const AboutSection = () => {
               {/* Francesco Mariotti */}
               <div className="text-center">
                 <div className="w-40 h-40 sm:w-48 sm:h-48 md:w-56 md:h-56 lg:w-64 lg:h-64 xl:w-72 xl:h-72 mx-auto mb-4 sm:mb-6 md:mb-8 rounded-full overflow-hidden border-2 border-primary/20 shadow-lg">
-                  <img src="/team/francesco_portrait.jpg" alt="Francesco Mariotti" className="w-full h-full object-cover object-top" />
+                  <img src={`${baseUrl}team/francesco_portrait.jpg`} alt="Francesco Mariotti" className="w-full h-full object-cover object-top" />
                 </div>
                 <h4 className="font-serif text-base sm:text-lg md:text-xl lg:text-2xl font-medium text-foreground mb-1 sm:mb-2">
                   Francesco Mariotti
@@ -117,7 +119,7 @@ const AboutSection = () => {
               {/* Sintija Birgele */}
               <div className="text-center md:col-span-1">
                 <div className="w-40 h-40 sm:w-48 sm:h-48 md:w-56 md:h-56 lg:w-64 lg:h-64 xl:w-72 xl:h-72 mx-auto mb-4 sm:mb-6 md:mb-8 rounded-full overflow-hidden border-2 border-primary/20 shadow-lg">
-                  <img src="/team/sintija-birgele.jpg" alt="Sintija Birgele" className="w-full h-full object-cover object-top" />
+                  <img src={`${baseUrl}team/sintija-birgele.jpg`} alt="Sintija Birgele" className="w-full h-full object-cover object-top" />
                 </div>
                 <h4 className="font-serif text-base sm:text-lg md:text-xl lg:text-2xl font-medium text-foreground mb-1 sm:mb-2">
                   Sintija Birgele
