@@ -7,7 +7,6 @@ import { ShieldCheck } from "lucide-react";
 const PRIVACY_CONSENT_KEY = "casa-quote-privacy-consent";
 
 const privacyTermsHtml = `
-<p class="text-base font-semibold">Termini e Condizioni - Privacy e Trattamento dei Dati Personali</p>
 <p class="mb-3">Utilizzando questo servizio, l'utente dichiara di aver letto e accettato i presenti termini e condizioni relativi al trattamento dei dati personali, redatti in conformita al Regolamento (UE) 2016/679 (GDPR) e alla normativa italiana vigente in materia di protezione dei dati personali.</p>
 
 <p class="mt-4 text-base font-semibold">1. Titolare del Trattamento</p>
@@ -108,7 +107,7 @@ export function PrivacyConsentModal({ open, onAccept, onClose }: Props) {
         <DialogHeader>
           <DialogTitle className="flex items-center gap-2">
             <ShieldCheck className="w-5 h-5 text-primary" />
-           Privacy Policy & Terms of Service
+           Termini e Condizioni - Privacy e Trattamento dei Dati Personali
            </DialogTitle>
         </DialogHeader>
         <div id="privacy-terms-desc" className="overflow-y-auto max-h-[60vh] text-sm text-slate-700 mb-4 pr-2">
