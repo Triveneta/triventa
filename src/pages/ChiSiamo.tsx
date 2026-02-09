@@ -95,9 +95,6 @@ const ChiSiamo = () => {
               <h2 className="font-serif text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-medium text-foreground mb-4 sm:mb-6">
                 Incontra il Nostro Team
               </h2>
-              <p className="text-base sm:text-lg md:text-xl text-foreground/90 leading-relaxed font-light text-center">
-                Nasce dall'intuizione dei due soci fondatori
-              </p>
             </div>
             
             <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8 md:gap-10 max-w-6xl mx-auto">
