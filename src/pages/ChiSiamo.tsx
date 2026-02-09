@@ -62,7 +62,7 @@ const ChiSiamo = () => {
               <div className="bg-card/40 rounded-2xl text-justify">
                 <div className="space-y-6">
                   <p className="text-base sm:text-lg md:text-xl text-foreground/90 leading-relaxed font-regular">
-                    Triveneta Immobiliare – Premium Real Estate è un’agenzia immobiliare di nuova generazione che unisce competenze consulenziali, digitale e un vasto network relazionale. Questo permette l'accesso a opportunità di acquisto e investimento uniche e l'affiancamento di investitori partendo da obiettivi di rendimento.
+                    Triveneta Immobiliare – Premium Real Estate è un’agenzia immobiliare di nuova generazione che unisce competenze consulenziali, digitale e un vasto network relazionale. Questo permette l'accesso a opportunità di acquisto e investimento uniche e l'affiancamento di investitori partendo da obiettivi di rendimento. Nasce dall'intuizione dei due soci fondatori: Francesco Mariotti, ingegnere specializzato in operazioni immobiliari e Luca Bazzanella manager esperto in consulenza strategica, finanza e M&A.
                   </p>
 
                   <p className="text-base sm:text-lg md:text-xl text-foreground/90 leading-relaxed font-light">

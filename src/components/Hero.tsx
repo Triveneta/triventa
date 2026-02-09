@@ -42,7 +42,7 @@ const Hero = () => {
               setShowInline(true);
               setInitialTab('search');
             }}
-            className="font-display w-full sm:w-auto sm:min-w-[200px] py-3 sm:py-4 px-6 sm:px-8 text-center text-sm font-medium tracking-[0.2em] text-white border-b sm:border-b-0 sm:border-r border-white/30 hover:text-amber-200 transition-colors"
+            className="font-display w-full sm:w-auto sm:min-w-[200px] py-3 sm:py-4 px-6 sm:px-8 text-center text-base font-medium tracking-[0.2em] text-white border-b sm:border-b-0 sm:border-r border-white/30 hover:text-amber-200 transition-colors"
           >
             CERCA CASA
           </button>
@@ -51,13 +51,13 @@ const Hero = () => {
               setShowInline(true);
               setInitialTab('value');
             }}
-            className="font-display w-full sm:w-auto sm:min-w-[200px] py-3 sm:py-4 px-6 sm:px-8 text-center text-sm font-medium tracking-[0.2em] text-white hover:text-amber-200 transition-colors"
+            className="font-display w-full sm:w-auto sm:min-w-[200px] py-3 sm:py-4 px-6 sm:px-8 text-center text-base font-medium tracking-[0.2em] text-white hover:text-amber-200 transition-colors"
           >
             VALUTA CASA
           </button>
           <Link
             to="/investimenti"
-            className="font-display w-full sm:w-auto sm:min-w-[200px] py-3 sm:py-4 px-6 sm:px-8 text-center text-sm font-medium tracking-[0.2em] text-white hover:text-amber-200 transition-colors"
+            className="font-display w-full sm:w-auto sm:min-w-[200px] py-3 sm:py-4 px-6 sm:px-8 text-center text-base font-medium tracking-[0.2em] text-white hover:text-amber-200 transition-colors"
           >
             Opportunità di Investimento
           </Link>
