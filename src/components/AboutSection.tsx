@@ -90,18 +90,7 @@ const AboutSection = () => {
           <div className="max-w-5xl mx-auto px-4">
 
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8 md:gap-10 lg:gap-12 xl:gap-16">
-              {/* Luca Bazzanella */}
-              <div className="text-center">
-                  <div className="w-40 h-40 sm:w-48 sm:h-48 md:w-56 md:h-56 lg:w-64 lg:h-64 xl:w-72 xl:h-72 mx-auto mb-4 sm:mb-6 md:mb-8 rounded-full overflow-hidden border-2 border-primary/20 shadow-lg">
-                  <img src={`${baseUrl}team/luca-bazzanella.png`} alt="Luca Bazzanella" className="w-full h-full object-cover object-top" />
-                </div>
-                <h4 className="font-serif text-base sm:text-lg md:text-xl lg:text-2xl font-medium text-foreground mb-1 sm:mb-2">
-                  Luca Bazzanella
-                </h4>
-                <p className="text-muted-foreground text-xs sm:text-sm md:text-base">
-                  Consulenza strategica e finanza
-                </p>
-              </div>
+
 
               {/* Francesco Mariotti */}
               <div className="text-center">
@@ -113,6 +102,19 @@ const AboutSection = () => {
                 </h4>
                 <p className="text-muted-foreground text-xs sm:text-sm md:text-base">
                   Immobiliare e Ingegnere
+                </p>
+              </div>
+
+                            {/* Luca Bazzanella */}
+              <div className="text-center">
+                  <div className="w-40 h-40 sm:w-48 sm:h-48 md:w-56 md:h-56 lg:w-64 lg:h-64 xl:w-72 xl:h-72 mx-auto mb-4 sm:mb-6 md:mb-8 rounded-full overflow-hidden border-2 border-primary/20 shadow-lg">
+                  <img src={`${baseUrl}team/luca-bazzanella.png`} alt="Luca Bazzanella" className="w-full h-full object-cover object-top" />
+                </div>
+                <h4 className="font-serif text-base sm:text-lg md:text-xl lg:text-2xl font-medium text-foreground mb-1 sm:mb-2">
+                  Luca Bazzanella
+                </h4>
+                <p className="text-muted-foreground text-xs sm:text-sm md:text-base">
+                  Consulenza strategica e finanza
                 </p>
               </div>
 
