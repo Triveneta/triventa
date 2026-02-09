@@ -4,6 +4,8 @@ import { Facebook, Instagram, Linkedin, ShieldCheck, Youtube } from "lucide-reac
 import { Button } from "@/components/ui/button";
 import { PrivacyConsentModal, usePrivacyConsent } from "@/components/PrivacyConsentModal";
 
+const baseUrl = import.meta.env.BASE_URL;
+
 const Footer = () => {
   const [privacyModalOpen, setPrivacyModalOpen] = useState(false);
   const { hasConsent, acceptConsent } = usePrivacyConsent();
@@ -18,7 +20,7 @@ const Footer = () => {
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Brand */}
           <div className="lg:col-span-2">
-            <img src="/logo.png" alt="Triveneta Immobiliare - Premium Real Estate" className="h-12 mb-6" />
+            <img src={`${baseUrl}logo.png`} alt="Triveneta Immobiliare - Premium Real Estate" className="h-12 mb-6" />
             <p className="text-muted-foreground mb-6 max-w-sm leading-relaxed">
               La tua agenzia immobiliare di fiducia nel Triveneto. Esperienza, professionalità e passione al servizio dei tuoi progetti.
             </p>
