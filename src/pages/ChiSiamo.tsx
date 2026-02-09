@@ -9,19 +9,20 @@ import { Users, Building2, FileCheck, Calculator, ArrowRight } from "lucide-reac
 const baseUrl = import.meta.env.BASE_URL;
 
 const team = [
-  {
-    name: "Luca Bazzanella",
-    role: "Co-Founder",
-    title: "Co-Founder",
-    desc: "Consulenza strategica e finanza",
-    photo: `${baseUrl}team/luca-bazzanella.png`
-  },
+
   {
     name: "Francesco Mariotti",
     role: "Co-Founder",
     title: "Co-Founder",
     desc: "Immobiliare e Ingegnere",
     photo: `${baseUrl}team/francesco_portrait.jpg`
+  },
+  {
+    name: "Luca Bazzanella",
+    role: "Co-Founder",
+    title: "Co-Founder",
+    desc: "Consulenza strategica e finanza",
+    photo: `${baseUrl}team/luca-bazzanella.png`
   },
   {
     name: "Sintija Birgele",
