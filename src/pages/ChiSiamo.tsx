@@ -29,7 +29,7 @@ const team = [
     role: "Team",
     title: "Ingegnera Informatico",
     desc: "Software e digitale",
-    photo: `${baseUrl}team/sintija-birgele.jpg`
+    photo: `${baseUrl}team/sintija.jpg`
   },
   {
     name: "Paolo Decaminada",
@@ -100,7 +100,7 @@ const ChiSiamo = () => {
               </h2>
             </div>
             
-            <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8 md:gap-10 max-w-6xl mx-auto">
+            <div className="grid grid-cols-4 gap-4 sm:gap-6 md:gap-8 max-w-7xl mx-auto">
               {team.map((member, i) => (
                 <div key={i} className="group relative overflow-hidden bg-card border border-border rounded-xl shadow-sm overflow-hidden hover:border-primary/20 transition-colors">
                   <div className="aspect-[3/4] min-h-[280px] sm:min-h-[320px] md:min-h-[360px] lg:min-h-[400px] overflow-hidden bg-muted">
