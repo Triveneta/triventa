@@ -107,7 +107,7 @@ const ChiSiamo = () => {
                     <img
                       src={member.photo}
                       alt={member.name}
-                      className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
+                      className={`w-full h-full object-cover transition-transform duration-500 group-hover:scale-105 ${member.name === "Sintija Birgele" ? "scale-125 object-[center_-20%]" : "object-top"}`}
                     />
                   </div>
                   <div className="p-4 sm:p-5 md:p-6 text-center">
