@@ -29,7 +29,7 @@ const team = [
     role: "Team",
     title: "Ingegnera Informatico",
     desc: "Software e digitale",
-    photo: `${baseUrl}team/sintija-birgele.jpg`
+    photo: `${baseUrl}team/sintija.jpg`
   },
   {
     name: "Paolo Decaminada",
