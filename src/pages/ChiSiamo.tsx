@@ -115,6 +115,8 @@ const ChiSiamo = () => {
                           ? "scale-[1.3] object-[center_-10%] translate-y-[32px] group-hover:scale-[1.35]"
                           : member.name === "Paolo Decaminada"
                           ? "scale-[1.2] group-hover:scale-[1.15]"
+                          : member.name === "Luca Bazzanella"
+                          ? "object-[center_5%] group-hover:scale-105"
                           : "group-hover:scale-105"
                       }`}
                     />
