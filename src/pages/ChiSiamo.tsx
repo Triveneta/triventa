@@ -108,7 +108,15 @@ const ChiSiamo = () => {
                     <img
                       src={member.photo}
                       alt={member.name}
-                      className={`w-full h-full object-cover transition-transform duration-500 group-hover:scale-105 ${member.name === "Sintija Birgele" ? "scale-125 object-[center_-20%]" : "object-top"}`}
+                      className={`w-full h-full object-cover transition-transform duration-500 ${
+                        member.name === "Sintija Birgele"
+                          ? "scale-[1.5] object-[center_-20%] translate-y-[24px] group-hover:scale-[1.45]"
+                          : member.name === "Francesco Mariotti"
+                          ? "scale-[1.3] object-[center_-10%] translate-y-[32px] group-hover:scale-[1.35]"
+                          : member.name === "Paolo Decaminada"
+                          ? "scale-[1.2] group-hover:scale-[1.15]"
+                          : "group-hover:scale-105"
+                      }`}
                     />
                   </div>
                   <div className="p-4 sm:p-5 md:p-6 text-center">
