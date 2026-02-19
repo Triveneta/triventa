@@ -14,7 +14,7 @@ const team = [
     name: "Francesco Mariotti",
     role: "Co-Founder",
     title: "Co-Founder",
-    desc: "Immobiliare e Ingegnere",
+    desc: "Ingegnere",
     photo: `${baseUrl}team/francesco_portrait.jpg`
   },
   {
@@ -27,7 +27,7 @@ const team = [
   {
     name: "Luca Bazzanella",
     role: "Co-Founder",
-    title: "Co-Founder",
+    title: "Socio di capitale",
     desc: "Consulenza strategica e finanza",
     photo: `${baseUrl}team/luca-bazzanella.png`
   },
