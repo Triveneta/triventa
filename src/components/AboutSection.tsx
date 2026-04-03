@@ -81,56 +81,14 @@ const AboutSection = () => {
               che unisce competenze consulenziali, digitali e un vasto network relazionale. Questo permette l'accesso
               a opportunità di acquisto e investimento uniche e l'affiancamento di investitori partendo da obiettivi di rendimento.
             </p>
-            <p className="text-foreground/90 text-base sm:text-lg pt-5 md:text-xl max-w-4xl mx-auto leading-relaxed font-serif font-medium">
-              Nasce dall'intuizione dei soci fondatori e dal team:
-            </p>
           </div>
-
-          {/* Team */}
-          <div className="max-w-5xl mx-auto px-4">
-
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8 md:gap-10 lg:gap-12 xl:gap-16">
-
-
-              {/* Francesco Mariotti */}
-              <div className="text-center">
-                <div className="w-40 h-40 sm:w-48 sm:h-48 md:w-56 md:h-56 lg:w-64 lg:h-64 xl:w-72 xl:h-72 mx-auto mb-4 sm:mb-6 md:mb-8 rounded-full overflow-hidden border-2 border-primary/20 shadow-lg">
-                  <img src={`${baseUrl}team/francesco_portrait.jpg`} alt="Francesco Mariotti" className="w-full h-full object-cover object-top" />
-                </div>
-                <h4 className="font-serif text-base sm:text-lg md:text-xl lg:text-2xl font-medium text-foreground mb-1 sm:mb-2">
-                  Francesco Mariotti
-                </h4>
-                <p className="text-muted-foreground text-xs sm:text-sm md:text-base">
-                  Immobiliare e Ingegnere
-                </p>
-              </div>
-
-                            {/* Luca Bazzanella */}
-              <div className="text-center">
-                  <div className="w-40 h-40 sm:w-48 sm:h-48 md:w-56 md:h-56 lg:w-64 lg:h-64 xl:w-72 xl:h-72 mx-auto mb-4 sm:mb-6 md:mb-8 rounded-full overflow-hidden border-2 border-primary/20 shadow-lg">
-                  <img src={`${baseUrl}team/luca-bazzanella.png`} alt="Luca Bazzanella" className="w-full h-full object-cover object-top" />
-                </div>
-                <h4 className="font-serif text-base sm:text-lg md:text-xl lg:text-2xl font-medium text-foreground mb-1 sm:mb-2">
-                  Luca Bazzanella
-                </h4>
-                <p className="text-muted-foreground text-xs sm:text-sm md:text-base">
-                  Consulenza strategica e finanza
-                </p>
-              </div>
-
-              {/* Sintija Birgele */}
-              <div className="text-center md:col-span-1">
-                <div className="w-40 h-40 sm:w-48 sm:h-48 md:w-56 md:h-56 lg:w-64 lg:h-64 xl:w-72 xl:h-72 mx-auto mb-4 sm:mb-6 md:mb-8 rounded-full overflow-hidden border-2 border-primary/20 shadow-lg">
-                  <img src={`${baseUrl}team/sintija.jpg`} alt="Sintija Birgele" className="w-full h-full object-cover object-top" />
-                </div>
-                <h4 className="font-serif text-base sm:text-lg md:text-xl lg:text-2xl font-medium text-foreground mb-1 sm:mb-2">
-                  Sintija Birgele
-                </h4>
-                <p className="text-muted-foreground text-xs sm:text-sm md:text-base">
-                  Software e digitale
-                </p>
-              </div>
-            </div>
+          <div className="text-center px-4">
+            <a
+              href="https://www.triveneta.eu/chi-siamo"
+              className="inline-flex items-center justify-center font-display text-xs sm:text-sm tracking-[0.2em] uppercase text-[#C9A44C] border border-[#C9A44C] rounded-full px-6 sm:px-8 py-3 sm:py-3.5 transition-all duration-300 hover:bg-[#C9A44C]/10 hover:shadow-[0_0_22px_rgba(201,164,76,0.35)]"
+            >
+              Per saperne di più
+            </a>
           </div>
         </div>
       </div>

@@ -28,7 +28,7 @@ const team = [
     name: "Luca Bazzanella",
     role: "Co-Founder",
     title: "Socio di capitale",
-    desc: "Consulenza strategica e finanza",
+    desc: "Socio di capitale",
     photo: `${baseUrl}team/luca-bazzanella.png`
   },
 
