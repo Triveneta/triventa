@@ -3,33 +3,38 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import PageHero from "@/components/PageHero";
 import { HERO_IMAGES } from "@/lib/hero-images";
-import { Users, Building2, FileCheck, Calculator, ArrowRight } from "lucide-react";
+import {
+  Users,
+  Building2,
+  FileCheck,
+  Calculator,
+  ArrowRight,
+} from "lucide-react";
 // Removed partnerships array
 
 const baseUrl = import.meta.env.BASE_URL;
 
 const team = [
-
   {
     name: "Francesco Mariotti",
     role: "Co-Founder",
     title: "Co-Founder",
     desc: "Ingegnere",
-    photo: `${baseUrl}team/francesco_portrait.jpg`
+    photo: `${baseUrl}team/francesco_portrait.jpeg`,
   },
   {
     name: "Paolo Decaminada",
     role: "Team",
     title: "Legal",
     desc: "Tax e legal",
-    photo: `${baseUrl}team/decaminada_2.jpg`
+    photo: `${baseUrl}team/decaminada_2.jpg`,
   },
   {
     name: "Luca Bazzanella",
     role: "Co-Founder",
     title: "Socio di capitale",
     desc: "Socio di capitale",
-    photo: `${baseUrl}team/luca-bazzanella.png`
+    photo: `${baseUrl}team/luca-bazzanella.png`,
   },
 
   {
@@ -37,8 +42,8 @@ const team = [
     role: "Team",
     title: "Ingegnera Informatico",
     desc: "Software e digitale",
-    photo: `${baseUrl}team/sintija.jpg`
-  }
+    photo: `${baseUrl}team/sintija.jpg`,
+  },
 ];
 
 const ChiSiamo = () => {
@@ -49,12 +54,15 @@ const ChiSiamo = () => {
         {/* Hero Section */}
         <PageHero imageUrl={HERO_IMAGES.chiSiamo}>
           <div className="max-w-4xl px-4 sm:px-6 md:px-8">
-            <p className="font-display text-amber-200 text-xs sm:text-sm font-medium tracking-[0.3em] mb-4 sm:mb-6">CHI SIAMO</p>
+            <p className="font-display text-amber-200 text-xs sm:text-sm font-medium tracking-[0.3em] mb-4 sm:mb-6">
+              CHI SIAMO
+            </p>
             <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-medium text-white leading-[1.1] mb-6 sm:mb-8 drop-shadow-sm">
               Un'agenzia immobiliare di nuova generazione
             </h1>
             <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-white/90 leading-relaxed max-w-3xl drop-shadow-sm font-light">
-              Triveneta Immobiliare – Premium Real Estate unisce affiancamento qualificato e tecnologie digitali avanzate.
+              Triveneta Immobiliare – Premium Real Estate unisce affiancamento
+              qualificato e tecnologie digitali avanzate.
             </p>
           </div>
         </PageHero>
@@ -66,15 +74,28 @@ const ChiSiamo = () => {
               <div className="bg-card/40 rounded-2xl text-justify p-4 sm:p-6">
                 <div className="space-y-6">
                   <p className="text-base sm:text-lg md:text-xl text-foreground/90 leading-relaxed font-regular">
-                    Triveneta Immobiliare – Premium Real Estate è un’agenzia immobiliare di nuova generazione che unisce competenze consulenziali, digitale e un vasto network relazionale. Questo permette l'accesso a opportunità di acquisto e investimento uniche e l'affiancamento di investitori partendo da obiettivi di rendimento. Nasce dall'intuizione dei due soci fondatori: Francesco Mariotti, ingegnere specializzato in operazioni immobiliari e Luca Bazzanella manager esperto in consulenza strategica, finanza e M&A.
+                    Triveneta Immobiliare – Premium Real Estate è un’agenzia
+                    immobiliare di nuova generazione che unisce competenze
+                    consulenziali, digitale e un vasto network relazionale.
+                    Questo permette l'accesso a opportunità di acquisto e
+                    investimento uniche e l'affiancamento di investitori
+                    partendo da obiettivi di rendimento. Nasce dall'intuizione
+                    dei due soci fondatori: Francesco Mariotti, ingegnere
+                    specializzato in operazioni immobiliari e Luca Bazzanella
+                    manager esperto in consulenza strategica, finanza e M&A.
                   </p>
 
                   <p className="text-base sm:text-lg md:text-xl text-foreground/90 leading-relaxed font-light">
-                    Operiamo con partner specializzati per offrire ai nostri clienti un servizio completo, sicuro e chiavi in mano.
+                    Operiamo con partner specializzati per offrire ai nostri
+                    clienti un servizio completo, sicuro e chiavi in mano.
                   </p>
 
                   <p className="text-base sm:text-lg md:text-xl text-foreground/90 leading-relaxed font-light">
-                    Chi entra nel nostro team cresce gradualmente su immobili di pregio, investimenti e operazioni complesse, costruendo relazioni solide con clienti e investitori. Cerchiamo consulenti immobiliari con esperienza o profili junior motivati a un percorso strutturato.
+                    Chi entra nel nostro team cresce gradualmente su immobili di
+                    pregio, investimenti e operazioni complesse, costruendo
+                    relazioni solide con clienti e investitori. Cerchiamo
+                    consulenti immobiliari con esperienza o profili junior
+                    motivati a un percorso strutturato.
                   </p>
 
                   <div>
@@ -82,7 +103,8 @@ const ChiSiamo = () => {
                       to="/servizi"
                       className="inline-flex items-center gap-2 sm:gap-3 text-primary font-medium hover:gap-4 transition-all text-sm sm:text-base"
                     >
-                      Scopri i nostri servizi <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5" />
+                      Scopri i nostri servizi{" "}
+                      <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5" />
                     </Link>
                   </div>
                 </div>
@@ -95,7 +117,9 @@ const ChiSiamo = () => {
         <section className="py-12 sm:py-16 md:py-20">
           <div className="container mx-auto px-4 sm:px-6">
             <div className="text-center mb-10 sm:mb-12 md:mb-16">
-              <p className="font-display text-primary text-xs sm:text-sm font-medium tracking-[0.3em] mb-3 sm:mb-4">IL NOSTRO TEAM</p>
+              <p className="font-display text-primary text-xs sm:text-sm font-medium tracking-[0.3em] mb-3 sm:mb-4">
+                IL NOSTRO TEAM
+              </p>
               <h2 className="font-serif text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-medium text-foreground mb-4 sm:mb-6">
                 Incontra il Nostro Team
               </h2>
@@ -103,7 +127,10 @@ const ChiSiamo = () => {
 
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-6 md:gap-8 max-w-7xl mx-auto">
               {team.map((member, i) => (
-                <div key={i} className="group relative overflow-hidden bg-card border border-border rounded-xl shadow-sm hover:border-primary/20 transition-colors">
+                <div
+                  key={i}
+                  className="group relative overflow-hidden bg-card border border-border rounded-xl shadow-sm hover:border-primary/20 transition-colors"
+                >
                   <div className="aspect-[3/4] min-h-[200px] sm:min-h-[280px] md:min-h-[320px] lg:min-h-[360px] overflow-hidden bg-muted">
                     <img
                       src={member.photo}
@@ -112,20 +139,28 @@ const ChiSiamo = () => {
                         member.name === "Sintija Birgele"
                           ? "scale-[1.5] object-[center_-20%] translate-y-[24px] group-hover:scale-[1.45]"
                           : member.name === "Francesco Mariotti"
-                          ? "scale-[1.3] object-[center_-10%] translate-y-[32px] group-hover:scale-[1.35]"
-                          : member.name === "Paolo Decaminada"
-                          ? "scale-[1.2] group-hover:scale-[1.15]"
-                          : member.name === "Luca Bazzanella"
-                          ? "object-[center_5%] group-hover:scale-105"
-                          : "group-hover:scale-105"
+                            ? "scale-[1.3] object-[center_-10%] translate-y-[32px] group-hover:scale-[1.35]"
+                            : member.name === "Paolo Decaminada"
+                              ? "scale-[1.2] group-hover:scale-[1.15]"
+                              : member.name === "Luca Bazzanella"
+                                ? "object-[center_5%] group-hover:scale-105"
+                                : "group-hover:scale-105"
                       }`}
                     />
                   </div>
                   <div className="p-4 sm:p-5 md:p-6 text-center">
-                    <p className="font-display text-primary text-[10px] sm:text-xs tracking-[0.2em] mb-1 sm:mb-2">{member.role}</p>
-                    <h3 className="font-serif text-sm sm:text-lg font-medium text-foreground mb-1">{member.name}</h3>
-                    <p className="text-xs sm:text-sm text-primary mb-2 sm:mb-3">{member.title}</p>
-                    <p className="text-xs sm:text-sm text-muted-foreground">{member.desc}</p>
+                    <p className="font-display text-primary text-[10px] sm:text-xs tracking-[0.2em] mb-1 sm:mb-2">
+                      {member.role}
+                    </p>
+                    <h3 className="font-serif text-sm sm:text-lg font-medium text-foreground mb-1">
+                      {member.name}
+                    </h3>
+                    <p className="text-xs sm:text-sm text-primary mb-2 sm:mb-3">
+                      {member.title}
+                    </p>
+                    <p className="text-xs sm:text-sm text-muted-foreground">
+                      {member.desc}
+                    </p>
                   </div>
                 </div>
               ))}
@@ -142,7 +177,8 @@ const ChiSiamo = () => {
               Inizia il tuo percorso con noi
             </h2>
             <p className="text-sm sm:text-base text-muted-foreground mb-6 sm:mb-8 max-w-xl mx-auto">
-              Scopri come possiamo aiutarti a raggiungere i tuoi obiettivi immobiliari.
+              Scopri come possiamo aiutarti a raggiungere i tuoi obiettivi
+              immobiliari.
             </p>
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
               <Link
