@@ -11,6 +11,9 @@ import { Camera, ChevronDown, Home } from "lucide-react";
 const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxEYUIiVQl5x2CvK9dPW-uMThvu8KQVmtkLsJn8hpENv4UorV-dtesLtccgqCO5RT8e/exec";
 
 const defaultContact = { nome: "", cognome: "", telefono: "", email: "" };
+const isValidEmail = (value: string) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value.trim());
+const hasRequiredContact = (contact: typeof defaultContact) =>
+  Boolean(contact.nome.trim() && contact.cognome.trim() && isValidEmail(contact.email));
 
 export default function CercaCasa() {
   const { toast } = useToast();
@@ -202,12 +205,21 @@ export default function CercaCasa() {
   };
 
   const handleSearchNext = async () => {
+    if (!hasRequiredContact(searchForm)) {
+      toast({
+        title: "Campi obbligatori mancanti",
+        description: "Inserisci nome, cognome ed email validi per continuare.",
+        variant: "destructive",
+      });
+      return;
+    }
+
     // send contact info as step 1
     await sendStepData("cerca_casa", 1, {
-      nome: searchForm.nome,
-      cognome: searchForm.cognome,
+      nome: searchForm.nome.trim(),
+      cognome: searchForm.cognome.trim(),
       telefono: searchForm.telefono,
-      email: searchForm.email,
+      email: searchForm.email.trim(),
     });
     setSearchStep(2);
   };
@@ -216,18 +228,36 @@ export default function CercaCasa() {
 
   const handleSearchSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    if (!hasRequiredContact(searchForm)) {
+      toast({
+        title: "Campi obbligatori mancanti",
+        description: "Inserisci nome, cognome ed email validi per continuare.",
+        variant: "destructive",
+      });
+      return;
+    }
+
     setIsSubmittingSearch(true);
     await sendStepData("cerca_casa", 2, { ...searchForm });
     setIsSubmittingSearch(false);
   };
 
   const handleValueNext = async () => {
+    if (!hasRequiredContact(valueForm)) {
+      toast({
+        title: "Campi obbligatori mancanti",
+        description: "Inserisci nome, cognome ed email validi per continuare.",
+        variant: "destructive",
+      });
+      return;
+    }
+
     // step 1 for valuation: contact
     await sendStepData("valuta_immobile", 1, {
-      nome: valueForm.nome,
-      cognome: valueForm.cognome,
+      nome: valueForm.nome.trim(),
+      cognome: valueForm.cognome.trim(),
       telefono: valueForm.telefono,
-      email: valueForm.email,
+      email: valueForm.email.trim(),
     });
     setValueStep(2);
   };
@@ -236,6 +266,15 @@ export default function CercaCasa() {
 
   const handleValueSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    if (!hasRequiredContact(valueForm)) {
+      toast({
+        title: "Campi obbligatori mancanti",
+        description: "Inserisci nome, cognome ed email validi per continuare.",
+        variant: "destructive",
+      });
+      return;
+    }
+
     // if not yet on final step, advance
     if (valueStep < 3) {
       setValueStep((s) => s + 1);
@@ -245,6 +284,9 @@ export default function CercaCasa() {
     await sendStepData("valuta_immobile", 3, { ...valueForm });
     setIsSubmittingValue(false);
   };
+
+  const isSearchContactValid = hasRequiredContact(searchForm);
+  const isValueContactValid = hasRequiredContact(valueForm);
 
   return (
     <div className="min-h-screen bg-background">
@@ -269,15 +311,15 @@ export default function CercaCasa() {
                 <div>
                   <h3 className="text-lg font-medium">I tuoi dati</h3>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                    <input placeholder="Nome" value={searchForm.nome} onChange={(e) => setSearchForm((s) => ({ ...s, nome: e.target.value }))} className="w-full rounded-lg border border-border/50 bg-background/60 p-2.5 text-sm text-foreground placeholder:text-muted-foreground/70 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-primary/40" />
-                    <input placeholder="Cognome" value={searchForm.cognome} onChange={(e) => setSearchForm((s) => ({ ...s, cognome: e.target.value }))} className="w-full rounded-lg border border-border/50 bg-background/60 p-2.5 text-sm text-foreground placeholder:text-muted-foreground/70 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-primary/40" />
+                    <input placeholder="Nome" value={searchForm.nome} onChange={(e) => setSearchForm((s) => ({ ...s, nome: e.target.value }))} className="w-full rounded-lg border border-border/50 bg-background/60 p-2.5 text-sm text-foreground placeholder:text-muted-foreground/70 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-primary/40" required autoComplete="given-name" />
+                    <input placeholder="Cognome" value={searchForm.cognome} onChange={(e) => setSearchForm((s) => ({ ...s, cognome: e.target.value }))} className="w-full rounded-lg border border-border/50 bg-background/60 p-2.5 text-sm text-foreground placeholder:text-muted-foreground/70 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-primary/40" required autoComplete="family-name" />
                   </div>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-3">
                     <input placeholder="Telefono" value={searchForm.telefono} onChange={(e) => setSearchForm((s) => ({ ...s, telefono: e.target.value }))} className="w-full rounded-lg border border-border/50 bg-background/60 p-2.5 text-sm text-foreground placeholder:text-muted-foreground/70 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-primary/40" />
-                    <input placeholder="Email" value={searchForm.email} onChange={(e) => setSearchForm((s) => ({ ...s, email: e.target.value }))} className="w-full rounded-lg border border-border/50 bg-background/60 p-2.5 text-sm text-foreground placeholder:text-muted-foreground/70 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-primary/40" />
+                    <input placeholder="Email" type="email" value={searchForm.email} onChange={(e) => setSearchForm((s) => ({ ...s, email: e.target.value }))} className="w-full rounded-lg border border-border/50 bg-background/60 p-2.5 text-sm text-foreground placeholder:text-muted-foreground/70 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-primary/40" required autoComplete="email" />
                   </div>
                   <div className="flex justify-end mt-4">
-                    <button type="button" onClick={handleSearchNext} className="px-4 py-2 rounded-full bg-foreground text-background text-xs uppercase tracking-[0.2em]">Avanti</button>
+                    <button type="button" onClick={handleSearchNext} disabled={!isSearchContactValid} className="px-4 py-2 rounded-full bg-foreground text-background text-xs uppercase tracking-[0.2em] disabled:cursor-not-allowed disabled:opacity-50">Avanti</button>
                   </div>
                 </div>
               )}
@@ -383,15 +425,15 @@ export default function CercaCasa() {
                 <div>
                   <h3 className="text-lg font-medium">I tuoi dati</h3>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                    <input placeholder="Nome" value={valueForm.nome} onChange={(e) => setValueForm((s) => ({ ...s, nome: e.target.value }))} className="w-full rounded-lg border border-border/50 bg-background/60 p-2.5 text-sm text-foreground placeholder:text-muted-foreground/70 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-primary/40" />
-                    <input placeholder="Cognome" value={valueForm.cognome} onChange={(e) => setValueForm((s) => ({ ...s, cognome: e.target.value }))} className="w-full rounded-lg border border-border/50 bg-background/60 p-2.5 text-sm text-foreground placeholder:text-muted-foreground/70 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-primary/40" />
+                    <input placeholder="Nome" value={valueForm.nome} onChange={(e) => setValueForm((s) => ({ ...s, nome: e.target.value }))} className="w-full rounded-lg border border-border/50 bg-background/60 p-2.5 text-sm text-foreground placeholder:text-muted-foreground/70 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-primary/40" required autoComplete="given-name" />
+                    <input placeholder="Cognome" value={valueForm.cognome} onChange={(e) => setValueForm((s) => ({ ...s, cognome: e.target.value }))} className="w-full rounded-lg border border-border/50 bg-background/60 p-2.5 text-sm text-foreground placeholder:text-muted-foreground/70 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-primary/40" required autoComplete="family-name" />
                   </div>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-3">
                     <input placeholder="Telefono" value={valueForm.telefono} onChange={(e) => setValueForm((s) => ({ ...s, telefono: e.target.value }))} className="w-full rounded-lg border border-border/50 bg-background/60 p-2.5 text-sm text-foreground placeholder:text-muted-foreground/70 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-primary/40" />
-                    <input placeholder="Email" value={valueForm.email} onChange={(e) => setValueForm((s) => ({ ...s, email: e.target.value }))} className="w-full rounded-lg border border-border/50 bg-background/60 p-2.5 text-sm text-foreground placeholder:text-muted-foreground/70 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-primary/40" />
+                    <input placeholder="Email" type="email" value={valueForm.email} onChange={(e) => setValueForm((s) => ({ ...s, email: e.target.value }))} className="w-full rounded-lg border border-border/50 bg-background/60 p-2.5 text-sm text-foreground placeholder:text-muted-foreground/70 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-primary/40" required autoComplete="email" />
                   </div>
                   <div className="flex justify-end mt-4">
-                    <button type="button" onClick={handleValueNext} className="px-4 py-2 rounded-full bg-foreground text-background text-xs uppercase tracking-[0.2em]">Avanti</button>
+                    <button type="button" onClick={handleValueNext} disabled={!isValueContactValid} className="px-4 py-2 rounded-full bg-foreground text-background text-xs uppercase tracking-[0.2em] disabled:cursor-not-allowed disabled:opacity-50">Avanti</button>
                   </div>
                 </div>
               )}
