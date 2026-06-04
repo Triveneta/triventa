@@ -46,6 +46,7 @@ const Contatti = () => {
   const [submitted, setSubmitted] = useState(false);
   const [formData, setFormData] = useState({
     nome: "",
+    cognome: "",
     email: "",
     telefono: "",
     oggetto: "",
@@ -86,17 +87,33 @@ const Contatti = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+
+    const trimmedNome = formData.nome.trim();
+    const trimmedCognome = formData.cognome.trim();
+    const trimmedEmail = formData.email.trim();
+    const isEmailValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(trimmedEmail);
+
+    if (!trimmedNome || !trimmedCognome || !isEmailValid) {
+      toast({
+        title: "Campi obbligatori mancanti",
+        description: "Inserisci nome, cognome ed email validi per continuare.",
+        variant: "destructive",
+      });
+      return;
+    }
+
     setIsSubmitting(true);
     try {
       await sendContactData({
-        nome: formData.nome,
-        email: formData.email,
+        nome: trimmedNome,
+        cognome: trimmedCognome,
+        email: trimmedEmail,
         telefono: formData.telefono,
         oggetto: formData.oggetto,
         messaggio: formData.messaggio,
       });
       setSubmitted(true);
-      setFormData({ nome: "", email: "", telefono: "", oggetto: "", messaggio: "" });
+      setFormData({ nome: "", cognome: "", email: "", telefono: "", oggetto: "", messaggio: "" });
     } catch (error) {
       toast({
         title: "Errore invio",
@@ -173,15 +190,27 @@ const Contatti = () => {
                       Dettagli inviati con successo. Ti contatteremo presto.
                     </div>
                   )}
-                  <div className="space-y-2">
-                    <Label htmlFor="nome" className="text-xs sm:text-sm">Nome e Cognome</Label>
-                    <Input 
-                      id="nome" 
-                      value={formData.nome}
-                      onChange={(e) => setFormData({...formData, nome: e.target.value})}
-                      className="text-sm sm:text-base"
-                      required 
-                    />
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
+                    <div className="space-y-2">
+                      <Label htmlFor="nome" className="text-xs sm:text-sm">Nome</Label>
+                      <Input 
+                        id="nome" 
+                        value={formData.nome}
+                        onChange={(e) => setFormData({...formData, nome: e.target.value})}
+                        className="text-sm sm:text-base"
+                        required 
+                      />
+                    </div>
+                    <div className="space-y-2">
+                      <Label htmlFor="cognome" className="text-xs sm:text-sm">Cognome</Label>
+                      <Input 
+                        id="cognome" 
+                        value={formData.cognome}
+                        onChange={(e) => setFormData({...formData, cognome: e.target.value})}
+                        className="text-sm sm:text-base"
+                        required 
+                      />
+                    </div>
                   </div>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
                     <div className="space-y-2">
@@ -192,6 +221,7 @@ const Contatti = () => {
                         value={formData.email}
                         onChange={(e) => setFormData({...formData, email: e.target.value})}
                         className="text-sm sm:text-base"
+                        autoComplete="email"
                         required 
                       />
                     </div>

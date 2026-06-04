@@ -121,11 +121,25 @@ const Investimenti = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+
+    const trimmedNome = formData.nome.trim();
+    const trimmedEmail = formData.email.trim();
+    const isEmailValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(trimmedEmail);
+
+    if (!trimmedNome || !isEmailValid) {
+      toast({
+        title: "Campi obbligatori mancanti",
+        description: "Inserisci nome ed email validi per continuare.",
+        variant: "destructive",
+      });
+      return;
+    }
+
     setIsSubmitting(true);
     try {
       await sendConsultingData({
-        nome: formData.nome,
-        email: formData.email,
+        nome: trimmedNome,
+        email: trimmedEmail,
         telefono: formData.telefono,
         indirizzo: formData.indirizzo,
         tipoCliente: formData.tipoCliente,
@@ -243,6 +257,7 @@ const Investimenti = () => {
                         value={formData.email}
                         onChange={(e) => setFormData({...formData, email: e.target.value})}
                         className="text-sm sm:text-base"
+                        autoComplete="email"
                         required 
                       />
                     </div>
